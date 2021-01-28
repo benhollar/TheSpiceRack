@@ -1,0 +1,83 @@
+body{
+	background-color: rgba(217, 234, 255) !important;
+}
+h2 {
+	font-family: 'Fraunces';
+	font-style: bold;
+	margin-top: -20px;
+	
+}
+
+p {
+	font-family: 'Bitter';
+}
+
+.container1{
+	margin-top: 80px;
+	margin-left: 150px;
+	margin-right: 80px;
+	padding-left: 50px;
+	padding-right: 0px;
+	padding-top: 10px;
+	background-color: rgba(255,255,255);
+}
+
+label, .measure {
+	font-family: 'Fraunces';
+	font-size: 1rem;
+	font-weight: 300;
+	margin: 10px 0px 0px 0px;
+
+}
+
+.measure {
+	font-family: 'Fraunces';
+	font-size: .8rem;
+	font-weight: 300;
+}
+
+
+
+input{
+	  width: 100%;
+  max-width: 90%;
+}
+.main{
+	font-family: 'Fraunces';
+	font-weight: 400;
+	font-size: 1.3rem;
+}
+
+form {
+	/*background-color: rgba(255, 255, 255);*/
+	padding: 0px 10px 0px 10px;
+}
+
+.addIngred, .addStep {
+	font-family: 'Bitter';
+	background-color: rgba(0,0,0,.4);
+	margin: 20px 30px;
+	border-radius: 15px;
+	width: 150px;
+	height: 40px;
+}
+
+.addRecipe{
+	font-family: 'Bitter', serif;
+	background-color: rgba(168, 202, 255,.6);
+	padding: 10px 20px;
+	margin: 20px 30px;
+	border-radius: 15px;
+	width: 150px;
+	height: 60px;
+
+
+}
+.addRecipe:hover{
+	background-color: rgba(143, 176, 227);
+	border-radius: 15px;
+	width: 150px;
+	height: 60px;
+
+}
+

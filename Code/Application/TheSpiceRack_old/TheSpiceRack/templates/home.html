@@ -2,16 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recipes</title>
-    <ul>
+    <link href="css/main.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;500&display=swap" rel="stylesheet">
+
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">The Spice Rack</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add_recipe.html">Add Recipes</a>
+        </li>
+       <!--  <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- end nav -->
+
+  <title>Recipes</title>
+    <ul class="recipeId">
         {% for recipe in recipes %}
-            <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a></li>
+            <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a>
+            </li>
         {% endfor %}
     </ul>
 </head>
+
 <body>
     <form action="/recipe/add/">
         <input type="submit" value="Add recipe" />
     </form>
+
 </body>
 </html>

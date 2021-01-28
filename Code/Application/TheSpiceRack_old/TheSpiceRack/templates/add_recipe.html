@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="css/main.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;500&display=swap" rel="stylesheet">
+
     <title>Add Recipe</title>
 
-
+<!-- js -->
     <script type="text/JavaScript">
     function createNewIngredient() {
         var div = document.getElementById('ingredient_input');
@@ -76,50 +87,93 @@
         div.appendChild(document.createElement('br'));
     }
     </script>
+
+   <!-- end js --> 
 </head>
+
+<!-- nav -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">The Spice Rack</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add_recipe.html">Add Recipes</a>
+        </li>
+       <!--  <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- end nav -->
+
 <body>
-    <h2>Add Recipe</h2>
-    <form action="/recipe/submit">
-        <label for="title">Title</label><br>
-        <input type="text" id="title" name="title"><br>
-        <label for="servings">Number of Servings</label><br>
-        <input type="number" id="servings" name="servings"><br>
-        <label>Ingredients</label><br>
-        <div id="ingredient_input">
-            <label for="amount_0"> Amount </label>
-            <input type="number" id="amount_0" name="amount_0">
-            <label for="measurement_0"> Measurement </label>
-            <select name="measurement_0" id="measurement_0">
-                <option value="Tablespoon">Tablespoon</option>
-                <option value="Teaspoon">Teaspoon</option>
-                <option value="Ounces">Ounces</option>
-                <option value="Cup">Cup</option>
-                <option value="Pint">Pint</option>
-                <option value="Quart">Quart</option>
-                <option value="Gallon">Gallon</option>
-                <option value="Milliliter">Milliliter</option>
-                <option value="Liter">Liter</option>
-                <option value="Pound">Pound</option>
-                <option value="Gram">Gram</option>
-                <option value="Kiligram">Kiligram</option>
-            </select>
-            <label for="name_0"> Name </label>
-            <input type="text" id="name_0" name="name_0"><br>
-        </div>
-        <button type="button" onclick="createNewIngredient()">Add Ingredient</button><br>
-        <label for="step_1">Preparation</label><br>
-        <div id="steps">
-            <label>Step 1</label>
-            <input type="text" id="step_1" name="step_1" ><br>
-            <label>Step 2</label>
-            <input type="text" id="step_2" name="step_2" ><br>
-            <label>Step 3</label>
-            <input type="text" id="step_3" name="step_3" ><br>
-        </div>
-        <button type="button" onclick="createNewStep()">Add Step</button><br>
+<div class="container1">
+    <div class="row">
+            <h2>Recipe Submission</h2>
+    </div>
+    <div class="row">
+        <p>Add your favorite recipes here!</p>
+    </div>
 
-        <input type="submit" value="Add Recipe">
-    </form>
+    <div class="row">
+        <form action="/recipe/submit">
+            <label class="main" for="title">Title</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label class="main" for="servings">Number of Servings</label><br>
+            <input type="number" id="servings" name="servings"><br>
+            <label class="main">Ingredients</label><br>
+            <div id="ingredient_input">
+                <label for="amount_0"> Amount </label>
+                <input type="number" id="amount_0" name="amount_0">
+                <label for="measurement_0"> Measurement </label>
+                <select class="measure" name="measurement_0" id="measurement_0">
+                    <option value="Tablespoon">Tablespoon</option>
+                    <option value="Teaspoon">Teaspoon</option>
+                    <option value="Ounces">Ounces</option>
+                    <option value="Cup">Cup</option>
+                    <option value="Pint">Pint</option>
+                    <option value="Quart">Quart</option>
+                    <option value="Gallon">Gallon</option>
+                    <option value="Milliliter">Milliliter</option>
+                    <option value="Liter">Liter</option>
+                    <option value="Pound">Pound</option>
+                    <option value="Gram">Gram</option>
+                    <option value="Kiligram">Kiligram</option>
+                </select><br>
+                <label for="name_0"> Name </label>
+                <input type="text" id="name_0" name="name_0"><br>
+            </div>
+            <button class="addIngred" type="button" onclick="createNewIngredient()">Add Ingredient</button><br>
+            <label class="main" for="step_1">Preparation</label><br>
+            <div id="steps">
+                <label>Step 1</label>
+                <input type="text" id="step_1" name="step_1" ><br>
+                <label>Step 2</label>
+                <input type="text" id="step_2" name="step_2" ><br>
+                <label>Step 3</label>
+                <input type="text" id="step_3" name="step_3" ><br>
+            </div>
+            <button class="addStep" type="button" onclick="createNewStep()">Add Step</button><br>
 
+            <input class="addRecipe" type="submit" value="Add Recipe">
+        </form>
+    </div>
+</div>
 </body>
 </html>
