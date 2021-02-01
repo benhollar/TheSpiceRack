@@ -7,9 +7,9 @@
 Code/Virtual Environments/
 
 # Content Recognition Output & Temp Files
-Code/Content Recognition/content_data/block_corrected
+Code/Content Recognition/extraction_data/block_corrected
 Code/Content Recognition/training_output/
-Code/Content Recognition/content_data/todo
+Code/Content Recognition/extraction_data/todo
 
 # Standard Python Ignores ##############################################
 
