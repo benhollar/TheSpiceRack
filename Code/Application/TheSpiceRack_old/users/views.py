@@ -1,11 +1,13 @@
 from rest_framework import filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-#from rest_framework.response import
 from recipe.models import Recipe
 from recipe.serializers import RecipeSerializer
 from . import models
-from django.shortcuts import render
+from .forms import CustomUserCreationForm
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.contrib.auth import login
 
 
 #HOMEPAGE
@@ -30,3 +32,17 @@ def profile(request, username):
         recipe = Recipe.objects.filter(user_id_full_name=user)
         serializer = RecipeSerializer(recipe, many=True)
         return Response(serializer.data)
+
+
+def register(request):
+    if request.method == "GET":
+        return render(
+            request, "users/register.html",
+            {"form": CustomUserCreationForm}
+        )
+    elif request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect(reverse("home"))
