@@ -98,11 +98,25 @@ extractor = recipe_extraction.models.load('path-to-saved-model.gz')
 ```
 ## Frequently Asked Questions (FAQ)
 
-### How do I make an account?
+### Q. How do I make an account?
 
-On the navigation bar, there is User tab. Once you click that, there should be a dropdown option for creating an account.
+A. On the navigation bar, there is User tab. Once you click that, there should be a dropdown option for creating an account.
 
-### Is the Spice Rack Safe?
+### Q. Can I input a recipe manually?
 
-The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software.
+A. Yes! The web page has a page that will allow users to manually add recipes.
+
+See [Adding a Recipe](#### Adding a Recipe)
+
+### Q. Is there an option to share saved recipes?
+
+A. Currently no, but that's something we would like to add later on!
+
+### Q. Can I upload handwritten recipes?
+
+A. We currently do not have a feature that will transform handwritten recipes digitally, however that is something that we would like to work on!
+
+### Q. Is the Spice Rack Safe?
+
+A. The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software.
 
