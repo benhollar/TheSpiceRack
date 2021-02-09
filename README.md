@@ -98,14 +98,13 @@ extractor = recipe_extraction.models.load('path-to-saved-model.gz')
 ```
 ## Frequently Asked Questions (FAQ)
 
-<details><summary> **How do I make an account?**
+<details>
+	<summary> How do I make an account?
 </summary>
-
-At the Login page, there is a Register button. Click that, and it will take you through the process of creating an account with Meetify.
+*On the navigation bar, there is User tab. Once you click that, there should be a dropdown option for creating an account.*
 </details>
 
-<details><summary>How do I make an account?
+<details><summary> Is The Spice Rack open safe?
 </summary>
-
-**At the Login page, there is a Register button. Click that, and it will take you through the process of creating an account with Meetify.**
+*The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software.
 </details>
