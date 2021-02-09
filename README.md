@@ -1,4 +1,4 @@
-# The Spice Rack
+# The Spice Rack User Documentation
 
 > **NOTICE:** This project is being actively developed as a Senior Capstone project by students at the University of
 > Cincinnati, advised by Dr. Chia Han. For more details on the University of Cincinnati class requirements, see the
@@ -12,7 +12,15 @@ manage their recipes. The Spice Rack aims to make the following effortless for u
 2. Storing user recipes, including automatically imported recipes from the previously mentioned parser.
 3. Presenting an effective user-interface for navigating stored recipes
 
+##Table of Contents
+- [Getting Started](#getting-started)
+  -[Application](#application)
+  -[Content Recognition](#content-recognition)
+- [FAQ](#faq)
+
 ## Getting Started
+
+The Spice Rack is designed to be a user-friendly web application, but we have listed directions for troubleshooting and setup.
 
 This project is, currently, divided in to two main sections:
 
@@ -106,7 +114,7 @@ A. On the navigation bar, there is User tab. Once you click that, there should b
 
 A. Yes! The web page has a page that will allow users to manually add recipes.
 
-See [Adding a Recipe in Application](#adding-a-recipe)
+See [Adding a Recipe](#adding-a-recipe)
 
 ### Q. Is there an option to share saved recipes?
 
@@ -120,3 +128,4 @@ A. We currently do not have a feature that will transform handwritten recipes di
 
 A. The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software.
 
+***If you have additional questions, feel free to contact our team found in our [Project Abstract](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/Project%20Description.md)***
