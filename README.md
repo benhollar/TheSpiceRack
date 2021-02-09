@@ -12,7 +12,7 @@ manage their recipes. The Spice Rack aims to make the following effortless for u
 2. Storing user recipes, including automatically imported recipes from the previously mentioned parser.
 3. Presenting an effective user-interface for navigating stored recipes.
 
-##Table of Contents
+## Table of Contents
 
 * [Getting Started](#getting-started)
 	* [Application](#application)
