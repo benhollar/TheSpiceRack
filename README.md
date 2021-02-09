@@ -98,13 +98,11 @@ extractor = recipe_extraction.models.load('path-to-saved-model.gz')
 ```
 ## Frequently Asked Questions (FAQ)
 
-<details>
-	<summary> How do I make an account?
-</summary>
-_On the navigation bar, there is User tab. Once you click that, there should be a dropdown option for creating an account._
-</details>
+### How do I make an account?
 
-<details><summary> Is The Spice Rack open safe?
-</summary>
-_The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software._
-</details>
+On the navigation bar, there is User tab. Once you click that, there should be a dropdown option for creating an account.
+
+### Is the Spice Rack Safe?
+
+The Spice Rack is open source, and a safe application. You can view our source code in [The Spick Rack Github Page](https://github.com/benhollar/TheSpiceRack/tree/master/Code) to verify the integrity of our software.
+
