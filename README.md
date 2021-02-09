@@ -13,6 +13,7 @@ manage their recipes. The Spice Rack aims to make the following effortless for u
 3. Presenting an effective user-interface for navigating stored recipes.
 
 ##Table of Contents
+
 * [Getting Started](#getting-started)
 	* [Application](#application)
 	* [Content Recognition](#content-recognition)
