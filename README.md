@@ -13,10 +13,10 @@ manage their recipes. The Spice Rack aims to make the following effortless for u
 3. Presenting an effective user-interface for navigating stored recipes.
 
 ##Table of Contents
-- [Getting Started](#getting-started)
-  -[Application](#application)
-  -[Content Recognition](#content-recognition)
-- [FAQ](#faq)
+* [Getting Started](#getting-started)
+	* [Application](#application)
+	* [Content Recognition](#content-recognition)
+* [FAQ](#faq)
 
 ## Getting Started
 
@@ -105,6 +105,10 @@ recipe_extraction.models.save(extractor)
 extractor = recipe_extraction.models.load('path-to-saved-model.gz')
 ```
 ## Frequently Asked Questions (FAQ)
+
+### Q. How is this different than a typical recipe website?
+
+A. Unlike most recipe websites, The Spice Rack can parse recipes that fit your need, without the hassle of pop-ups and ads!
 
 ### Q. How do I make an account?
 
