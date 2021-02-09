@@ -106,7 +106,7 @@ A. On the navigation bar, there is User tab. Once you click that, there should b
 
 A. Yes! The web page has a page that will allow users to manually add recipes.
 
-See [Adding a Recipe](#### Adding a Recipe)
+See [Adding a Recipe](#-Adding-a-Recipe)
 
 ### Q. Is there an option to share saved recipes?
 
