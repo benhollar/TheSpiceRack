@@ -26,8 +26,8 @@ effort allocation.
 
 | Task                                                                    | Start Date | Completion Date |
 | ----------------------------------------------------------------------- | ---------- | --------------- |
-| Develop REST API to pass data between server and client application(s). | 2021-02-07 | 2021-03-21      |
-| Develop user-management functionality                                   | 2021-02-07 | 2021-03-21      |
+| Develop REST API to pass data between server and client application(s). | 2021-01-23 | 2021-01-25      |
+| Develop user-management functionality                                   | 2021-02-01 | 2021-02-02      |
 
 ### (4) Development: Client Application (2020-12-06 to 2021-03-21)
 
@@ -36,10 +36,10 @@ effort allocation.
 | Define web-development framework to create the application.       | 2020-12-13 | 2020-12-20      |
 | Define CSS and other design principles                            | 2020-12-13 | 2020-12-20      |
 | Create "user-management" page(s) for signing up, logging in, etc. | 2021-01-10 | 2021-01-24      |
-| Create "home" webpage.                                            | 2021-01-25 | 2021-02-07      |
-| Create "recipe viewer" webpage.                                   | 2021-02-07 | 2021-02-14      |
+| Create "home" webpage.                                            | 2021-01-25 | 2021-01-30      |
+| Create "recipe viewer" webpage.                                   | 2021-01-25 | 2021-01-30      |
 | Create form to upload recipe source to be parsed and stored.      | 2021-02-14 | 2021-03-07      |
-| Create page(s) to manually create, edit, and delete recipes       | 2021-03-08 | 2021-03-21      |
+| Create page(s) to manually create, edit, and delete recipes       | 2021-01-25 | 2021-01-30      |
 
 ## Effort Matrix
 
