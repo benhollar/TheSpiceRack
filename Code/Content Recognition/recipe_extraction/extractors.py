@@ -116,6 +116,7 @@ def save(extractor: _Extractor,
         output_path = _os.path.join(
             _os.path.dirname(DEFAULT_DATA_DIRECTORY),
             'training_output',
+            'extraction',
             _date.now().strftime("%Y%m%d%H%M%S") + '_' + 'model.gz'
         )
 

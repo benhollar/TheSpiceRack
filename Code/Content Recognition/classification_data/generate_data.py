@@ -1,20 +1,31 @@
 import numpy as _numpy
 import pandas as _pandas
 import os as _os
+from sklearn.model_selection import train_test_split as _train_test_split
 
 
 DEFAULT_DATA_DIRECTORY = _os.path.join(
     _os.path.dirname(_os.path.dirname(__file__)),
     'extraction_data',
     'Corrected')
-DEFAULT_OUTPUT_PATH = _os.path.join(
+DEFAULT_OUTPUT_TRAIN_PATH = _os.path.join(
     _os.path.dirname(__file__),
-    'classification_data.csv')
+    'classification_train.csv')
+DEFAULT_OUTPUT_TEST_PATH = _os.path.join(
+    _os.path.dirname(__file__),
+    'classification_test.csv')
+DEFAULT_OUTPUT_LABELS_PATH = _os.path.join(
+    _os.path.dirname(__file__),
+    'classification_labels.csv')
 
 
 def generate_data(extraction_data=DEFAULT_DATA_DIRECTORY,
-                  output_path=DEFAULT_OUTPUT_PATH):
-    """Generate classification training data from content extraction dataset
+                  train_output_path=DEFAULT_OUTPUT_TRAIN_PATH,
+                  test_output_path=DEFAULT_OUTPUT_TEST_PATH,
+                  labels_output_path=DEFAULT_OUTPUT_LABELS_PATH):
+    """TODO: Update this
+
+    Generate classification training data from content extraction dataset
 
     This function is highly dependent on the structure of the content extraction
     dataset and should be used accordingly. If changes are made there, they will
@@ -64,10 +75,22 @@ def generate_data(extraction_data=DEFAULT_DATA_DIRECTORY,
                         current_class = 'instruction'
                     ingredients_done = True
 
-    data_frame = _pandas.DataFrame(columns=['Text', 'Class'])
-    data_frame['Text'] = original_text
-    data_frame['Class'] = classified_type
-    data_frame.to_csv(output_path, index=False)
+    data_frame = _pandas.DataFrame(
+        columns=['text', 'title', 'ingredient', 'instruction', 'other']
+    )
+    data_frame['text'] = original_text
+    data_frame['title'] = (classified_type == 'title').astype('int')
+    data_frame['ingredient'] = (classified_type == 'ingredient').astype('int')
+    data_frame['instruction'] = (classified_type == 'instruction').astype('int')
+    data_frame['other'] = (classified_type == 'other').astype('int')
+
+    df_train, df_test = _train_test_split(data_frame)
+    df_train.to_csv(train_output_path)
+    df_test.to_csv(test_output_path)
+    with open(labels_output_path, 'x') as labels_file:
+        labels_file.write(
+            '\n'.join(['title', 'ingredient', 'instruction', 'other'])
+        )
 
 
 if __name__ == '__main__':
