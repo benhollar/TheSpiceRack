@@ -60,7 +60,7 @@ ROOT_URLCONF = 'TheSpiceRack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(__file__), 'templates')],
+        'DIRS': [(os.path.join(os.path.dirname(__file__), 'templates')), os.path.join(BASE_DIR, 'media')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -128,3 +129,9 @@ LOGIN_REDIRECT_URL = '/users/'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = ((os.path.join(os.path.dirname(__file__), 'static')), )

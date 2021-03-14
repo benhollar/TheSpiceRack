@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="css/main.css" rel="stylesheet">
+
+    {%load static%}
+    <link href="{%static 'css/main.css' %}" rel="stylesheet">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <!-- fonts -->
@@ -132,7 +134,10 @@
     </div>
 
     <div class="row">
-        <form action="/recipe/submit">
+        <form action="/recipe/submit/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="main" for="picture">Picture</label>
+            <input type="file" id="picture" name="picture"><br>
             <label class="main" for="title">Title</label><br>
             <input type="text" id="title" name="title"><br>
             <label class="main" for="servings">Number of Servings</label><br>

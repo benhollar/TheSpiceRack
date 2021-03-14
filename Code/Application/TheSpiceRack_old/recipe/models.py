@@ -44,6 +44,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200)
     steps = models.CharField(max_length=1000)
     servings = models.IntegerField()
+    picture = models.FileField(upload_to='recipes/')
     #If wanting to add a calorie management system
     #calories = models.IntergerField()
 

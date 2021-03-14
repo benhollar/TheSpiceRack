@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <link href="css/main.css" rel="stylesheet">
+    {%load static%}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -56,6 +56,7 @@
         </div>
         <div class="row">
             <form action="/recipe/save/{{recipe.id}}">
+                <img src="{{ recipe.picture.url }}" title="Recipe">
                 <label class="main" for="title">Title</label><br>
                 <input type="text" id="title" name="title" value="{{recipe.title}}"><br>
                 <label class="main" for="servings">Number of Servings</label><br>
