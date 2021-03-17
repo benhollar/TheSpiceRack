@@ -5,6 +5,10 @@
     {%load static%}
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
+    <!-- First include jquery js -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -143,13 +147,12 @@
                 <input type="number" id="servings" name="servings" value="{{recipe.servings}}"><br>
                 <label for="ingredient_input">Ingredients</label><br>
                 <div id="ingredient_input">
-
                     {% for ingredient in ingredients %}
 
-                        <label for="amount_{{ loop.index0 }}"> Amount </label>
-                        <input type="number" id="amount_{{ loop.index0 }}" name="amount_{{ loop.index0 }}" value="{{ ingredient.amount.value }}"><br>
-                        <label class="measure" for="measurement_{{ loop.index0 }}"> Measurement </label>
-                        <select name="measurement_{{ loop.index0 }}" id="measurement_{{ loop.index0 }}">
+                        <label for="amount_{{ forloop.counter }}"> Amount </label>
+                        <input type="number" id="amount_{{ forloop.counter }}" name="amount_{{ forloop.counter }}" value="{{ ingredient.amount.value }}"><br>
+                        <label class="measure" for="measurement_{{ forloop.counter }}"> Measurement </label>
+                        <select name="measurement_{{ forloop.counter }}" id="measurement_{{ forloop.counter }}">
                             <option value="Tablespoon">Tablespoon</option>
                             <option value="Teaspoon">Teaspoon</option>
                             <option value="Ounces">Ounces</option>
@@ -163,8 +166,8 @@
                             <option value="Gram">Gram</option>
                             <option value="Kiligram">Kiligram</option>
                         </select>
-                        <label for="name_{{ loop.index0 }}"> Name </label>
-                        <input type="text" id="name_{{ loop.index0 }}" name="name_{{ loop.index0 }}" value="{{ ingredient.name.value }}"><br>
+                        <label for="name_{{ forloop.counter }}"> Name </label>
+                        <input type="text" id="name_{{ forloop.counter }}" name="name_{{ forloop.counter }}" value="{{ ingredient.name.value }}"><br>
 
                     {% endfor %}
                 </div>
@@ -172,8 +175,8 @@
                 <label class="main" for="steps">Recipe Steps</label><br>
                 <div id="steps">
                     {% for step in steps %}
-                        <label>Step {{ loop.index }}</label>
-                        <input type="text" id="step_{{ loop.index }}" name="step_{{ loop.index }}" value="{{ step }}"><br>
+                        <label>Step {{ forloop.counter }}</label>
+                        <input type="text" id="step_{{ forloop.counter }}" name="step_{{ forloop.counter }}" value="{{ step }}"><br>
                     {% endfor %}
                 </div>
                 <button class="addStep" type="button" onclick="createNewStep()">Add Step</button><br>
