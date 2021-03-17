@@ -150,6 +150,9 @@ def delete_recipe(request, recipe_id):
     return redirect('/users/')
 
 def upload_recipe(request):
+    return render(request, 'upload_recipe.html')
+
+def parse_recipe(request):
     #URL should be the only input
     request.GET.get('url')
 
@@ -157,6 +160,9 @@ def upload_recipe(request):
     #TODO: The Machine Learning things
 
     #TODO: Put machine learning output into this context boy
+
+
+
     context = {'recipe': recipe_data, 'ingredients': ingredients, 'steps': splitsteps}
 
     return render(request, 'edit_recipe.html', context)
