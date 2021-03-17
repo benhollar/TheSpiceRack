@@ -1,0 +1,55 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+  background-color: rgba(237, 243, 250) !important;
+}
+
+h2,h3, .card-header, .card-title {
+	font-family: 'Fraunces';
+	font-style: bold;
+}
+
+
+.card-title a, h4 a {
+	color: rgba(0,0,0) !important;
+	
+}
+
+.card-title a:hover, h4 a:hover {
+	color: rgba(105, 117, 133) !important;
+}
+p, .text {
+font-family: 'Bitter' !important;
+}
+
+
+.card-header {
+background-color: rgba(255,255,255) !important;
+}
+
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.login {
+	padding-top: 50px;
+	background-color: rgba(255,255,255) !important;
+}
+
+.portfolio-item {
+  margin-bottom: 20px;
+}
+
+

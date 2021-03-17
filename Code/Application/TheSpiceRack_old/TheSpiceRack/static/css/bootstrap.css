@@ -2,7 +2,7 @@
 /*nav bar*/
 
 .navbar{
-	background-color: rgba(176, 176, 176);
+	background-color: rgba(218, 225, 230);
 	padding: 10px 0px 10px 0px;
 }
 .navbar-brand {
@@ -12,6 +12,7 @@
   font-weight: bold;
   letter-spacing: 2px;
   align-content:center;
+  margin-bottom:-20px;
 }
 
 .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
@@ -31,7 +32,10 @@
 }
 
 .nav-link {
-  padding: .2rem 1rem;
+ /* padding: .2rem 1rem;*/
+  font-family: 'Fraunces';
+  font-style: bold;
+  font-size: 1.2em;
 }
 
 .nav-link.active,.nav-link:focus{
