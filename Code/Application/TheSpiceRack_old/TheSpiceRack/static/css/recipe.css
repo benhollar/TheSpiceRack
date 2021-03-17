@@ -1,0 +1,37 @@
+.row {
+	background-color: #FFFFFF;
+	padding: 20px;
+	margin: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h3 {
+	font-family: 'Fraunces';
+}
+
+
+ol {
+	font-family: 'Bitter';
+}
+
+body {
+	background-color: rgba(237, 243, 250) !important;
+	padding: 60px 10px 0px 10px;
+}
+
+
+input[type=submit] {
+	font-family: 'Bitter';
+	margin-bottom: 10px;
+    padding: 5px 10px;
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}

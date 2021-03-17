@@ -10,15 +10,16 @@ import dragnet.model_training as _model_training
 import dragnet.data_processing as _data_processing
 from sklearn.neighbors import KNeighborsClassifier as _KNeighborsClassifier
 from sklearn.ensemble import ExtraTreesClassifier as _ExtraTreesClassifier
+from sklearn.ensemble import BaggingClassifier as _BaggingClassifier
 from sklearn.svm import SVC as _SVC
 from sklearn.neural_network import MLPClassifier as _MLPClassifier
 from sklearn.externals import joblib as _joblib
 
 
-_DEFAULT_DRAGNET_FEATURES = ('kohlschuetter', 'weninger', 'readability')
-_DEFAULT_DATA_DIRECTORY = _os.path.join(
+DEFAULT_DRAGNET_FEATURES = ('kohlschuetter', 'weninger', 'readability')
+DEFAULT_DATA_DIRECTORY = _os.path.join(
     _os.path.dirname(_os.path.dirname(__file__)),
-    'content_data'
+    'extraction_data'
 )
 
 
@@ -26,12 +27,18 @@ _DEFAULT_DATA_DIRECTORY = _os.path.join(
 class RecipeExtractionModel(_Enum):
     KNeighbors = _KNeighborsClassifier(
         n_neighbors=10,
-        weights='distance'
+        weights='distance',
+        n_jobs=-1
     )
     ExtraTrees = _ExtraTreesClassifier(
         n_estimators=10,
         max_features=None,
-        min_samples_leaf=75
+        min_samples_leaf=75,
+        n_jobs=-1
+    )
+    Bagging = _BaggingClassifier(
+        n_estimators=10,
+        n_jobs=-1
     )
     SVC = _SVC(
         C=1,
@@ -39,7 +46,7 @@ class RecipeExtractionModel(_Enum):
         gamma='auto'
     )
     MLP = _MLPClassifier(
-        max_iter=1000,
+        max_iter=1000
     )
 
     def __str__(self):
@@ -47,8 +54,8 @@ class RecipeExtractionModel(_Enum):
 
 
 def train(model: RecipeExtractionModel = RecipeExtractionModel.SVC,
-          features: _Iterable[str] = _DEFAULT_DRAGNET_FEATURES,
-          data_location: str = _DEFAULT_DATA_DIRECTORY) -> _Extractor:
+          features: _Iterable[str] = DEFAULT_DRAGNET_FEATURES,
+          data_location: str = DEFAULT_DATA_DIRECTORY) -> _Extractor:
     """Train a content extraction model using dragnet and sklearn
 
     Parameters
@@ -107,8 +114,9 @@ def save(extractor: _Extractor,
     if output_path is None:
         from datetime import datetime as _date
         output_path = _os.path.join(
-            _os.path.dirname(_DEFAULT_DATA_DIRECTORY),
+            _os.path.dirname(DEFAULT_DATA_DIRECTORY),
             'training_output',
+            'extraction',
             _date.now().strftime("%Y%m%d%H%M%S") + '_' + 'model.gz'
         )
 
