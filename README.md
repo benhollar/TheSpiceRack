@@ -35,8 +35,41 @@ Detailed instructions for getting set up with each section of the repository are
 
 ### Application
 
-_The web-application is currently beginning development, and is not in a state for public usage. Installation and usage
-instructions will be provided in the future._
+### How to install for development/personal use
+1.	Install Python version 3.8.8 or higher
+2.	Install Django using Django provided documentation 
+3.	Install Other django packages needed: 
+	* Run: `pip install django-allauth`
+	* Run: `pip install django-rest-auth`
+	* Run: `pip install socialdjango`
+4.	Set up database for the website to store and pull data from
+	* Run `python manage.py makemigrations`
+	* Run: `python manage.py migrate`
+5.	Create User to log in with to use the website: 
+	* Run: `python manage.py createsuperuser`
+6.	Fill in required table
+	* Run: `Python manage.py runserver`
+	* Go to "127.0.0.1:8000/admin" in a web browser
+	* Log in using account created in step 5
+	* Click on 'Measurements' under the Recipe header
+	* Add the following values manually to the table: 
+		1. ID: 1 Type: Teaspoon 
+		2. ID: 2 Type: Tablespoon
+		3. ID: 3 Type: Ounces
+		4. ID: 4 Type: Cup
+		5. ID: 5 Type: Pint
+		6. ID: 6 Type: Quart
+		8. ID: 7 Type: Gallon
+		9. ID: 8 Type: Milliliter
+		10. ID: 9 Type: Liter
+		11. ID: 10 Type: Pound
+		12. ID: 11 Type: Gram
+		13. ID: 12 Type: Kilogram
+		* Note: The 'is fluid' and 'is metric' check boxes are optional, but do not need to be checked.
+7.	Use website!
+	* Navigate to 127.0.0.1:8000/
+	* Log in with user created in step 5
+
 
 #### Logging In
 
