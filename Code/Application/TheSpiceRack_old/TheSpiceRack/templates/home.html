@@ -11,7 +11,7 @@
     <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <!-- fonts -->
@@ -57,16 +57,17 @@
         {% if user.is_authenticated %}
             <ul>
                 {% for recipe in recipes %}
-                    <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a></li>
+                    <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a>
+                        <img class="img-responsive" src="{{ filename }}" alt=" {{ recipe.title }}"></li>
                 {% endfor %}
             </ul>
 
-    <!-- Your recipes -->
+    <!-- Add Edit Browse -->
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
           <h4 class="card-header">
-            <a href="add_recipe.html"> Add a Recipe </a>
+            <a href="/recipe/add/"> Add a Recipe </a>
           </h4>
           <div class="card-body">
             <p class="card-text">Add new recipes to our database!</p>
@@ -145,7 +146,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
     </div>
     <!-- /.container -->
   </footer>
