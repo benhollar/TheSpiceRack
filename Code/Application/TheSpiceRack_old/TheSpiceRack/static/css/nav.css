@@ -1,12 +1,10 @@
 
 /*nav bar*/
 
-.navr {
- margin-bottom: 100px;
-}
 
 .navbar{
 	background-color: rgba(218, 225, 230);
+  margin-bottom: 50px;
 }
 .navbar-brand {
   color: #fff;
@@ -37,7 +35,7 @@
  /* padding: .2rem 1rem;*/
   font-family: 'Fraunces';
   font-style: bold;
-  font-size: 1em;
+  font-size: 20px;
 }
 
 .nav-link.active,.nav-link:focus{
