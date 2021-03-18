@@ -70,48 +70,8 @@
                 {% endfor %}
             </ul>
 
-    <!-- Add Edit Browse -->
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">
-            <a href="/recipe/add/"> Add a Recipe </a>
-          </h4>
-          <div class="card-body">
-            <p class="card-text">Add new recipes to our database!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">
-            <a href="edit_recipe.html"> Edit a Recipe </a>
-          </h4>
-          <div class="card-body">
-            <p class="card-text">Need to modify a recipe? Click the link above to edit existing entries.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">
-            <a href="recipe.html"> Browse Recipes </a>
-          </h4>
-          <div class="card-body">
-            <p class="card-text">Looking for a specific dish to try? Browse our recipes!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-        {% else %}
-            <a href="{% url 'login' %}">Login</a>
-        {% endif %}
-    </div>
-
-
-    <!-- Portfolio Section -->
-    <h2>Your Recipes</h2>
+<!-- View Recipes -->
+<h2>Your Recipes</h2>
 
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-3 portfolio-item">
@@ -149,6 +109,45 @@
       </div>
     </div>
     <!-- /.row -->
+<!-- Add Edit Browse -->
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="/recipe/add/"> Add a Recipe </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Add new recipes to our database!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="edit_recipe.html"> Edit a Recipe </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Need to modify a recipe? Click the link above to edit existing entries.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="recipe.html"> Browse Recipes </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Looking for a specific dish to try? Browse our recipes!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+      {% else %}
+            <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </div
 
 
   <!-- Footer -->
