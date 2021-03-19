@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% load static %}
+
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+    <!-- First include jquery js -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;500&display=swap" rel="stylesheet">
+<!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand pull-left" href="/users/"><img src="{% static 'img/logo.png' %}" height ="60"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recipe/add/">Add Recipes Manually</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/recipe/upload/">Upload Recipe from URL</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recipe/?">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'password_change' %}">Change
+            Password</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</head>
+
+<body>
+    <div class="login">
+        {% if user.is_authenticated %}
+            <h1>Welcome {{user.username}}</h1>
+            <ul>
+                {% for recipe in recipes %}
+                    <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a>
+                        <img class="img-responsive" src="{{ recipe.picture }}" alt=" {{ recipe.title }}"></li>
+                {% endfor %}
+            </ul>
+
+    <!-- Add Edit Browse -->
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="/recipe/add/"> Add a Recipe </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Add new recipes to our database!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="edit_recipe.html"> Edit a Recipe </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Need to modify a recipe? Click the link above to edit existing entries.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">
+            <a href="recipe.html"> Browse Recipes </a>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">Looking for a specific dish to try? Browse our recipes!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+
+
+    <!-- Portfolio Section -->
+    <h2>Your Recipes</h2>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-3 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b.jpg?fit=696,1024" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Mashed Potatoes with a twist!</a>
+            </h4>
+            <p class="card-text">Your favorite mashed potatoes topped with a Beef and Mushroom sauce!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/exps21444_TH132767B05_02_1b_WEB-3.jpg?fit=696,1024" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Homemade Vegetarian Pot Pie</a>
+            </h4>
+            <p class="card-text">Crispy and flaky pot pie filled with light and hearty homemade sauce and vegetables.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/exps13525_MRR153791B09_17_4b-1.jpg?fit=696,1024" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Zucchini Boats</a>
+            </h4>
+            <p class="card-text">Baked zucchini filled with ground beef, mushrooms, red pepper, and topped with cheese.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
