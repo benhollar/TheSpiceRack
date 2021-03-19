@@ -1,0 +1,35 @@
+.row {
+	margin: 90px;
+}
+
+.row2 {
+	margin-top: -100px;
+	margin-left: 10px;
+
+	font-family: 'Bitter';
+	font-size: .8rem;
+}
+
+form {
+	font-family: 'Fraunces';
+	font-size: .8rem;
+}
+
+input[type=submit] {
+	font-family: 'Bitter';
+	margin-top: 20px;
+	margin-bottom: 20px;
+    padding: 5px;
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+.titler {
+	font-family: 'Fraunces';
+	font-size: 1rem;
+	margin-left: 20px;
+
+}

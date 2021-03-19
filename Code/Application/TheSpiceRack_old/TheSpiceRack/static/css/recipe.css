@@ -1,10 +1,10 @@
 .row {
 	background-color: #FFFFFF;
-	padding: 20px;
-	margin: 20px;
+	padding: 50px;
+	margin-top: 100px;
 }
 
-img {
+.img-responsive {
   display: block;
   max-width: 100%;
   height: auto;
@@ -21,7 +21,6 @@ ol {
 
 body {
 	background-color: rgba(237, 243, 250) !important;
-	padding: 60px 10px 0px 10px;
 }
 
 
@@ -35,3 +34,4 @@ input[type=submit] {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 }
+
