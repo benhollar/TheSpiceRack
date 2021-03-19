@@ -70,6 +70,7 @@
 	    var newName = document.createElement("input");
 	    newName.type = "text";
 	    newName.id = "name_"+num;
+	    newName.name = "name_"+num;
 	    document.getElementById('ingredient_input').appendChild(newName);
 	    document.getElementById('ingredient_input').appendChild(document.createElement('br'));
     }
@@ -90,6 +91,11 @@
         newStepInput.name = "step_"+num;
         div.appendChild(newStepInput);
         div.appendChild(document.createElement('br'));
+    }
+
+    function selectElement(id, valueToSelect) {
+        let element = document.getElementById(id);
+        element.value = valueToSelect;
     }
     </script>
 
@@ -150,12 +156,11 @@
                 <input type="number" id="servings" name="servings" value="{{recipe.servings}}"><br>
                 <label for="ingredient_input">Ingredients</label><br>
                 <div id="ingredient_input">
-                    {% for ingredient in ingredients %}
-
+                    {% for ingredient, measurement in zipped %}
                         <label for="amount_{{ forloop.counter }}"> Amount </label>
                         <input type="number" id="amount_{{ forloop.counter }}" name="amount_{{ forloop.counter }}" value="{{ ingredient.amount.value }}"><br>
-                        <label class="measure" for="measurement_{{ forloop.counter }}"> Measurement </label>
-                        <select name="measurement_{{ forloop.counter }}" id="measurement_{{ forloop.counter }}">
+                        <label class="measure" for="measurements_{{ forloop.counter }}"> Measurement </label>
+                        <select name="measurements_{{ forloop.counter }}" id="measurements_{{ forloop.counter }}">
                             <option value="Tablespoon">Tablespoon</option>
                             <option value="Teaspoon">Teaspoon</option>
                             <option value="Ounces">Ounces</option>
@@ -168,7 +173,11 @@
                             <option value="Pound">Pound</option>
                             <option value="Gram">Gram</option>
                             <option value="Kiligram">Kiligram</option>
-                        </select>
+                        </select><br>
+                        <script type="text/JavaScript">
+                            selectElement('measurements_{{ forloop.counter }}', '{{measurement}}');
+                        </script>
+
                         <label for="name_{{ forloop.counter }}"> Name </label>
                         <input type="text" id="name_{{ forloop.counter }}" name="name_{{ forloop.counter }}" value="{{ ingredient.name.value }}"><br>
 

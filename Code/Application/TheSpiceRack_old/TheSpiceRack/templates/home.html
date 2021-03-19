@@ -66,7 +66,10 @@
             <ul>
                 {% for recipe in recipes %}
                     <li><a href="/recipe/{{recipe.id}}/">{{ recipe.title }}</a>
-                        <img class="img-responsive" src="{{ recipe.picture }}" alt=" {{ recipe.title }}"></li>
+                        {% if recipe.picture != None %}
+                            <img class="img-responsive" src="{{ recipe.picture }}" alt=" {{ recipe.title }}">
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
 
