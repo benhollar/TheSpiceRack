@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}">
-       <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
-    <link href="{%static 'css/main.css' %}" rel="stylesheet">
+
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
@@ -18,61 +19,23 @@
 
     <title>Login</title>
 
-    <!-- nav -->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-	  <div class="container">
-	    <a class="navbar-brand pull-left" href="/users/"><img src="{% static 'img/logo.png' %}" height ="60"></a>
-
-	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-
-	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      <ul class="navbar-nav ml-auto">
-	        <li class="nav-item">
-	          <a class="nav-link" href="about.html">About</a>
-	        </li>
-	          <li class="nav-item">
-	          <a class="nav-link" href="/recipe/add/">Add Recipes Manually</a>
-	        </li>
-	          <li class="nav-item">
-	              <a class="nav-link" href="/recipe/upload/">Upload Recipe from URL</a>
-	          </li>
-
-	        <li class="nav-item">
-	          <a class="nav-link" href="/recipe/?">User</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="{% url 'password_change' %}">Change 
-	            Password</a>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-<!-- end nav -->
 </head>
-
-<div class="row">
-<div class="col-lg-4 col-md-4 col-sm- 4 mb 4">	
 <body>
+<div class="row">
+<div class="container">	
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Login">
     </form>
 </div>
-</div>
-<div class="row2">
-<div class="col-lg-4 col-md-4 col-sm- 4 mb 4">	
+<div class="container">  
     <a href="{% url 'register' %}">Create an Account</a>
 </div>
 
 </div>
-</body>
 
 
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </html>

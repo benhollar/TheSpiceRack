@@ -3,17 +3,14 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
-body {
-  padding-top: 56px;
-  background-color: rgba(237, 243, 250) !important;
-}
 
-h2,h3, .card-header, .card-title {
+body{
+	background-color: rgba(248,248,255) !important;
+}
+h2,h3, .card-header, .card-title, .login {
 	font-family: 'Fraunces';
 	font-style: bold;
-
 }
-
 
 .card-title a, h3 a {
 	color: rgba(0,0,0) !important;
@@ -30,9 +27,17 @@ background-color: rgba(255,255,255) !important;
 }
 
 
-.container {
+.recipes {
 	margin-left: 20px;
 }
 
+.logo{
+	display: flex;
+ 	justify-content: center;
+}
+
+.login, p, ol {
+	font-family: 'Bitter';
+}
 
 
