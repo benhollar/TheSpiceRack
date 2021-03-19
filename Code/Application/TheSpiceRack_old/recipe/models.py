@@ -40,7 +40,7 @@ class Measurement(models.Model):
 class Recipe(models.Model):
     # Primary Key
     id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField()
+    username = models.CharField(max_length=200, default='')
     title = models.CharField(max_length=200)
     steps = models.CharField(max_length=1000)
     servings = models.IntegerField()

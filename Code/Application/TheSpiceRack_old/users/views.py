@@ -14,24 +14,21 @@ from django.contrib.auth import login
 def home(request):
     recipes = Recipe.objects.all()
     serializer = RecipeSerializer(recipes, many=True)
-    print(serializer)
     context = {'recipes':serializer.data}
     return render(request, 'home.html', context)
 
 #USERPROFILE
-def profile(request, username):
-    queryset = models.CustomUser.objects.all()
-    #seralizers = seralizers.UserSerializer
-    filter_backends = (filters.SearchFilter, filters.OrderingFilter, )
-    search_fields = ('full_name', 'email', )
-    ordering_fields = ('full_name',)
+def profile(request):
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
 
-    @action(detail=True, methods=['get'])
-    def recipes(self, request, pk=None):
-        user = models.CustomUser = self.get_object()
-        recipe = Recipe.objects.filter(user_id_full_name=user)
-        serializer = RecipeSerializer(recipe, many=True)
-        return Response(serializer.data)
+    recipes = Recipe.objects.all().filter(username=username)
+    serializer = RecipeSerializer(recipes, many=True)
+    context = {'recipes': serializer.data}
+    return render(request, 'profile.html', context)
+
+
 
 
 def register(request):

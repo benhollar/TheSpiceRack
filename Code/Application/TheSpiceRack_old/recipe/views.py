@@ -15,22 +15,27 @@ def view_recipe(request, recipe_id):
     query_i = Ingredient.objects.all().filter(recipe_used=recipe_model)
     results_i = query_i.values()
     ingredients = []
+    measurements = []
 
-    #print(recipe.data)
 
     for thing in results_i:
-        #print(thing)
         ingredient = IngredientSerializer(thing, many=False)
         ingredients.append(ingredient.data)
+        query_m = Measurement.objects.all().filter(id=ingredient.data.get('measurement_id'))
+        results_m = query_m.values()
+        measurement = MeasurementSerializer(results_m[0], many=False)
+        measurements.append(measurement.data.get('type'))
 
-    #print(ingredients)
+    print(measurements)
 
     fullsteps = recipe.data.get('steps')
 
     splitsteps = fullsteps.split('/n')
     splitsteps.remove('')
 
-    context = {'recipe':recipe.data, 'ingredients': ingredients, 'steps' : splitsteps, 'filename' : filename}
+    zipped_data = zip(ingredients, measurements)
+
+    context = {'recipe':recipe.data, 'steps' : splitsteps, 'filename' : filename, 'zipped': zipped_data}
 
 
     return render(request, 'recipe_info.html', context)
@@ -55,8 +60,9 @@ def submit_recipe(request):
                 count_steps+=1
 
         id_r = Recipe.objects.all().count()
+        print(id_r)
 
-        testing = Recipe.objects.create(id=id_r+1, user_id=0, title=title, servings=servings, steps=all_steps, picture=picture)
+        testing = Recipe.objects.create(id=id_r+3, username=request.user.username, title=title, servings=servings, steps=all_steps, picture=picture)
 
         ##Create Ingredient objects for each
         id_i = Ingredient.objects.all().count()
@@ -75,7 +81,7 @@ def submit_recipe(request):
                 results_m = query_m.values()
                 measurement = MeasurementSerializer(results_m[0], many=False)
 
-                Ingredient.objects.create(id=id_i+1, name=ingredients_name, amount=ingredients_amount, measurement_id=measurement.data.get('id'), recipe_used=testing)
+                Ingredient.objects.create(id=id_i+5, name=ingredients_name, amount=ingredients_amount, measurement_id=measurement.data.get('id'), recipe_used=testing)
     return redirect('/users/')
 
 
@@ -130,15 +136,20 @@ def save_recipe(request, recipe_id):
         recipe_preedit = RecipeSerializer(results_r[0], many=False)
         recipe_pre = Recipe(picture=recipe_preedit.data.get('picture'), id=recipe_preedit.data.get('id'), user_id=recipe_preedit.data.get('user_id'), title=recipe_preedit.data.get('title'), servings=recipe_preedit.data.get('servings'), steps=recipe_preedit.data.get('steps'))
 
-        recipe = Recipe(picture=picture, id=recipe_id, user_id=0, title=title, servings=servings, steps=all_steps)
+        recipe = Recipe(picture=picture, username= request.user.username, id=recipe_id, user_id=0, title=title, servings=servings, steps=all_steps)
         recipe.save()
 
         query_i = Ingredient.objects.all().filter(recipe_used=recipe_pre)
         results_i = query_i.values()
+        measurements = []
 
         for thing in results_i:
             ingredient = IngredientSerializer(thing, many=False)
             ingred = Ingredient(id=ingredient.data.get('id'), name=ingredient.data.get('name'), amount=ingredient.data.get('amount'), measurement_id=ingredient.data.get('measurement_id'), recipe_used=recipe)
+            query_m = Measurement.objects.all().filter(id=ingredient.data.get('measurement_id'))
+            results_m = query_m.values()
+            measurement = MeasurementSerializer(results_m[0], many=False)
+            measurements.append(measurement.data.get('type'))
             ingred.save()
 
     return redirect('/users/')

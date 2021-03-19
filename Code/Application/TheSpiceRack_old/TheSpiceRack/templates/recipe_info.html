@@ -75,8 +75,12 @@
         <h3>Number of Servings: {{recipe.servings}}</h3>
         <h3>Ingredients</h3>
         <ul>
-            {% for ingredient in ingredients %}
-                    <li>{{ingredient.amount}} {{ingredient.name}}</li>
+            {% for ingredient, measurement in zipped %}
+                {% if ingredient.amount <= 1 %}
+                    <li>{{ ingredient.amount }} {{ measurement }} {{ ingredient.name }}</li>
+                {% else %}
+                    <li>{{ ingredient.amount }} {{ measurement }}s {{ ingredient.name }}</li>
+                {% endif %}
             {% endfor %}
         </ul>
         <h3>Steps</h3>
