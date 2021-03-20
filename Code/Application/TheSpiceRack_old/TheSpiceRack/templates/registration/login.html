@@ -21,19 +21,21 @@
 
 </head>
 <body>
+
+
+<section class="login">
 <div class="row">
 <div class="container">	
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Login">
+        <input type="submit" value="Login"> 
+                <a class="fp" href="{% url 'password_change' %}">Forget Password?</a>
+        <a class="reg" href="{% url 'register' %}">New Member? Register Now</a>
     </form>
 </div>
-<div class="container">  
-    <a href="{% url 'register' %}">Create an Account</a>
 </div>
-
-</div>
+</section>
 
 
   <script src="{% static 'jquery/jquery.min.js' %}"></script>

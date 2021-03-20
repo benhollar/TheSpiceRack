@@ -1,9 +1,14 @@
-
-
+html {
+  background-color: rgba(250, 247, 242) !important;
+}
 .container1 {
 	background-color: #FFFFFF;
   margin: 10px 150px 50px 150px;
   padding:20px 20px 30px 20px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+  z-index: 1;
+  border-radius: 0 !important;
 }
 
 .info{
@@ -25,9 +30,6 @@ ul, ol {
 	font-family: 'Bitter';
 }
 
-body {
-	background-color: rgba(237, 243, 250) !important;
-}
 
 
 input[type=submit] {

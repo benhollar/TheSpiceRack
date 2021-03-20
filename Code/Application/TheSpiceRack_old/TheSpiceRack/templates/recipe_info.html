@@ -42,7 +42,7 @@
                 <a class="nav-link" href="/recipe/add/">Add a Recipe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">User</a>
+                <a class="nav-link" href="/users/profile">User</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'password_change' %}">Change 
@@ -66,7 +66,7 @@
             <img class="img-responsive" src="{{ filename }}" title=" {{ recipe.title }}">
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             <h1>{{recipe.title}}</h1>
             <h3>Number of Servings: {{recipe.servings}}</h3>
             <h3>Ingredients</h3>
@@ -87,13 +87,16 @@
             </ol>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-2">
 
             <form action="/recipe/edit/{{recipe.id}}">
                 <input type="submit" value="Edit recipe" />
             </form>
             <form action="/recipe/delete/{{recipe.id}}">
                 <input type="submit" value="Delete recipe" />
+            </form>
+            <form action="/users/profile">
+                <input type="submit" value="Back to Recipes" />
             </form>
         </div>
     </div>

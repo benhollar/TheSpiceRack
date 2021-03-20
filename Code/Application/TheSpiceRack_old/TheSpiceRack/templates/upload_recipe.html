@@ -49,15 +49,13 @@
 </head>
 <body>
 
-<div class="row">
-<div class="col-lg-4 col-md-4 col-sm- 4 mb 4">	
-<label class="titler">Recipe Upload</label>
+<div class="container up">	
+<label>Recipe Upload</label>
 
     <form action="/recipe/parse">
         <input class="text" id="url" name="url"><br>
         <input class="uploadRecipe" type="submit" value="Upload Recipe">
     </form>
-</div>
 </div>
 </body>
 
@@ -68,4 +66,8 @@
     </div>
     <!-- /.container -->
   </footer>
+
+    <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </html>

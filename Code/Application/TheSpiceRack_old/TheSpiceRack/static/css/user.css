@@ -1,32 +1,62 @@
-.row, {
-	margin: 100px;
-	padding-left: 2rem; 
+
+html {
+	background-color: rgba(250, 247, 242) !important;
+	height: 100%;
 }
 
-.row2 {
-	margin-top: -100px;
-	margin-left: 60px;
-	font-family: 'Bitter';
-	font-size: .8rem;
-}
 
 form {
 	font-family: 'Fraunces';
-	font-size: .8rem;
+	font-size: 1rem;
 }
 
 input[type=submit] {
+
 	font-family: 'Bitter';
-	margin: 5px 0px 20px 70px;
+	margin: 10px 0px 20px 80px;
     padding: 5px 10px;
     background:#ccc; 
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
+    display: flex;
+ 	justify-content: center;
 }
 
 .container {
 	display: flex;
  	justify-content: center;
 }
+
+text{
+	margin: 10px;
+}
+
+a {
+	font-family: 'Bitter';
+	display: flex;
+ 	justify-content: center;
+}
+
+.fp, .reg {
+	font-size: .8em;
+	text-decoration: underline;
+}
+
+.fp {
+	margin-top: -20px;
+	margin-left: 150px;
+	font-size: .8em;
+	text-decoration: underline;
+
+}
+
+.login {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	display: flex;
+ 	justify-content: center;
+}
+
+#footer { position: fixed; bottom: 0px; height:150px; }
