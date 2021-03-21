@@ -232,6 +232,6 @@ def parse_recipe(request):
                                                measurement_id=unit,
                                                recipe_used_id=recipe.id)
         ingredient.save()
-        ingredients.append(IngredientSerializer(ingredient))
+        ingredients.append(IngredientSerializer(ingredient, many=False))
 
     return edit_recipe(request, recipe.id)
