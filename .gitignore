@@ -143,3 +143,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 Code/Content Recognition/classification_data/cache
+Code/Application/TheSpiceRack_old/media
+Code/Application/TheSpiceRack_old/recipe/classification_data
+Code/Application/TheSpiceRack_old/recipe/extraction_data
+Code/Application/TheSpiceRack_old/recipe/recipe_extraction
