@@ -1,16 +1,56 @@
-/*!
- * Start Bootstrap - Modern Business (https://startbootstrap.com/template/modern-business)
- * Copyright 2013-2020 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
- */
 
-html {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+/*html {
+  background-color: rgba(250, 247, 242) !important;
+  height: 100% !important;
+}*/
+
+body {
   background-color: rgba(250, 247, 242) !important;
   height: 100% !important;
 }
-h1, h2,h3, .card-header, .card-title, .login, .btn-group {
-	font-family: 'Fraunces';
-	font-style: bold;
+h2,h3, .card-header, .card-title, .login, .btn-group {
+	font-family: 'Playfair Display', 'serif';
+	font-weight: 800;
+}
+
+h1{
+	font-family: 'Playfair Display', 'serif';
+	font-weight: 800;
+
+}
+
+ .jumbotron-heading {
+	font-family: 'Playfair Display', 'serif';
+	font-weight: 800;
+}
+
+.recipe_header {
+	margin-left: 2%;
+	font-family: 'Playfair Display', 'serif';
+	font-weight: 600 !important;
+}
+
+p, .parse, .btn-group {
+	font-family: 'Poppins', 'san-serif';
+	font-weight: 200;
+	font-size: 1em;
+	
+}
+
+.jumbo-btn {
+	font-family: 'Poppins', 'san-serif';
+	font-weight: 200;
+	font-size: 1em;
+	margin-bottom: 10px;
+    padding: 5px 10px;
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+	border-radius: 0 !important;
+    border-radius: 5px; 
 }
 
 h4 {
@@ -42,17 +82,14 @@ background-color: rgba(255,255,255) !important;
 
 
 .recipes {
-	margin-left: 20px;
+ 	margin-left: 10%;
+ 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-.logo{
-	display: flex;
- 	justify-content: center;
-}
 
-.login, p, ol, ul {
-	font-family: 'Bitter';
+.login, ol, ul {
+	font-family: 'Playfair Display';
 }
 
 .pw {
@@ -65,12 +102,13 @@ background-color: rgba(255,255,255) !important;
 	 object-fit: cover !important;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;            /* Footer height */
+#profile{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
 }
+
+footer { position: absolute; bottom: 0px; width: 100%;}
 
 
 

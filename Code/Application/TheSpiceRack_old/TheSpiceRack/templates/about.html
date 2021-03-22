@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-{% load static %}
+
+    {% load static %}
     <link href="{% static 'css/nav.css' %}" rel="stylesheet">
-    <link href="{% static 'css/user.css' %}" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -18,8 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;500&display=swap" rel="stylesheet">
-
-<!-- nav -->
+    
 <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
@@ -29,45 +29,54 @@
     <div class="collapse navbar-collapse" id="myNavbarToggler13">
         <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
-                <a class="nav-link" href="/users/">HOME</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">ADD RECIPES</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/recipe/add/">ADD MANUALLY</a>
-              <a class="dropdown-item" href="/recipe/upload/">UPLOAD VIA URL</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">PROFILE</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/users/profile/">VIEW RECIPES</a>
-              <a class="dropdown-item" href="{% url 'password_change' %}">CHANGE PASSWORD</a>
-              <a class="dropdown-item" href="{% url 'logout' %}">LOGOUT</a>
+                <a class="nav-link" href="/recipe/add/">LOGIN/SIGNUP</a>
             </li>
         </ul>
     </div>
 </nav>
-<!-- end nav -->
+
+
 </head>
+
 <body>
 
-<div class="container pw">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Change">
-    </form>
+<
+<div class="row">
+    <div class="col-lg-12">
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Begin your Cooking Journey Now!</h1>
+           <p>Sign in or create an account to get started!</p>
+            <a href="{% url 'login' %}" class="jumbo-btn my-2">LOGIN</a>
+            <a href="/users/register" class="jumbo-btn my-2">SIGN UP</a>
+          </p>
+        </div>
+      </section>
+    </div>
 </div>
 
-</body>
+<div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <h2 class="text-center">What is The Spice Rack?</h2>
+        <p class="text-center">Finding, collecting, and cooking recipes can be a daunting task. There are numerous hurdles for people to effectively manage their recipes. The Spice Rack aims to make the following effortless for users:</p>
+  <ol class="parse">
+    <li>Parsing a variety of sources of recipes (websites, handwritten recipes) into a common, easy-to-read format.</li>
+    <li>Storing user recipes, including automatically imported recipes from the previously mentioned parser.</li>
+    <li>Presenting an effective user-interface for navigating stored recipes.</li>
+  </ol>
+    </div>
+  </div>
 
+    <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg" alt="">
+    </div>
+</div>
 
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'jquery/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-
+</body>
 </html>

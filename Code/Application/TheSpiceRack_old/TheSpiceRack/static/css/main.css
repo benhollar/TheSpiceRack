@@ -1,27 +1,32 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+/*html {
   background-color: rgba(250, 247, 242) !important;
-}
+  height: 100% !important;
+}*/
+
 h2 {
-	font-family: 'Fraunces';
+	font-family: 'Playfair Display';
 	font-style: bold;
 	margin-top: -20px;
 }
 
 p {
-	font-family: 'Bitter';
+	font-family: 'Poppins';
 }
 
 .container1{
-/*	margin-top: 10px;
-	margin-left: 150px;
-	margin-right: 150px;*/
-	margin: 10px 150px 20px 150px;
+	margin: 20px 150px 20px 150px;
 	padding:20px 80px 20px 80px;
 	background-color: rgba(255,255,255);
+	position: relative;
+  	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+  	z-index: 1;
 }
 
 label, .measure {
-	font-family: 'Fraunces';
+	font-family: 'Playfair Display';
 	font-size: 1rem;
 	font-weight: 300;
 	margin: 10px 0px 0px 0px;
@@ -29,7 +34,7 @@ label, .measure {
 }
 
 .measure {
-	font-family: 'Fraunces';
+	font-family: 'Playfair Display';
 	font-size: .8rem;
 	font-weight: 300;
 }
@@ -41,7 +46,7 @@ input{
   	max-width: 90%;
 }
 .main{
-	font-family: 'Fraunces';
+	font-family: 'Playfair Display';
 	font-weight: 400;
 	font-size: 1.3rem;
 }
@@ -52,8 +57,8 @@ form {
 }
 
 .addIngred, .addStep {
-	font-family: 'Bitter';
-	margin: 5px 0px 20px 70px;
+	font-family: 'Playfair Display';
+	margin-top: 20px;
     padding: 5px 10px;
     background:#ccc; 
     border:0 none;
@@ -63,8 +68,8 @@ form {
 }
 
 .addRecipe{
-	font-family: 'Bitter';
-	margin-left: 0px;
+	font-family: 'Playfair Display';
+	margin-top: 10px;
     padding: 5px;
     background:#ccc; 
     border:0 none;
@@ -74,6 +79,29 @@ form {
 
 
 }
+
+input[type=submit] {
+
+	font-family: 'Playfair Display';
+	margin: 10px 0px 20px 0px;
+	padding: 5px;
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    display: flex;
+ 	justify-content: center;
+}
+
+#recup {
+	padding: 30px;
+}
+
+body {
+  background-color: rgba(250, 247, 242) !important;
+  height: 100% !important;
+ }
 /*.addRecipe:hover{
 	background-color: rgba(143, 176, 227);
 	border-radius: 15px;
@@ -81,5 +109,7 @@ form {
 	height: 60px;
 
 }*/
+
+footer {position: absolute; bottom: 0px; width: 100%;}
 
 

@@ -1,10 +1,13 @@
-html {
-  background-color: rgba(250, 247, 242) !important;
+
+
+body {
+    background-color: rgba(250, 247, 242) !important;
+    height: 100%;
 }
 .container1 {
 	background-color: #FFFFFF;
-  margin: 10px 150px 50px 150px;
-  padding:20px 20px 30px 20px;
+  margin: 30px 150px 20px 150px;
+  padding:50px 20px 30px 20px;
   position: relative;
   box-shadow: 0 0 5px rgba(75, 75, 75, .07);
   z-index: 1;
@@ -43,3 +46,5 @@ input[type=submit] {
     border-radius: 5px; 
 }
 
+
+footer { position: absolute; bottom: 0px; width: 100%;}
