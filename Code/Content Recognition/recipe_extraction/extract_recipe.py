@@ -10,6 +10,11 @@ class Recipe:
     ingredients: _List[str] = []
     instructions: _List[str] = []
 
+    def __init__(self):
+        self.title = ''
+        self.ingredients = []
+        self.instructions = []
+
     def __str__(self):
         return (
             "| " + self.title + " |\n" +
