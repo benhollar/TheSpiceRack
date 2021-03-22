@@ -62,20 +62,19 @@ form {
     padding: 5px 10px;
     background:#ccc; 
     border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 0 !important;
+    box-shadow: 1px 2px 3px rgba(0,0,0, .5);
+
 }
+
 
 .addRecipe{
 	font-family: 'Playfair Display';
-	margin-top: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
     padding: 5px;
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+	border-radius: 0 !important;
+    box-shadow: 1px 2px 3px rgba(0,0,0, .5);
 
 
 }
@@ -83,19 +82,24 @@ form {
 input[type=submit] {
 
 	font-family: 'Playfair Display';
-	margin: 10px 0px 20px 0px;
+	margin: 30px 0px 20px 0px;
 	padding: 5px;
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border: 0;
+	border-radius: 0 !important;
+    box-shadow: 1px 2px 3px rgba(0,0,0, .5);
     display: flex;
  	justify-content: center;
+ 	background-color: rgba(148, 148, 148);
+ 	/*color: #fff;*/
 }
 
 #recup {
 	padding: 30px;
+
+}
+
+#step_1{
+	margin-right: 20px;
 }
 
 body {

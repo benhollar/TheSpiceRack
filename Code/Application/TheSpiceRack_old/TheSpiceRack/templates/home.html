@@ -79,7 +79,7 @@
     <div class="col-lg-12">
     <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Welcome {{user.username}}!</h1>
+          <h1 class="jumbotron-heading")">Welcome {{user.username}}!</h1>
            <p>Get started by adding your favorite recipes!</p>
             <a href="/recipe/add" class="jumbo-btn my-2">ADD A RECIPE</a>
             <a id="" href="/recipe/upload" class="jumbo-btn my-2">UPLOAD VIA URL</a>
@@ -91,20 +91,20 @@
 <div class="row">
     <div class="col-lg-12">
         <section class="recipes" style="margin-left: 20%">
-          <h1 class="recipe_header"> Welcome {{user.username}}! View or edit your recipes:</h1>
+          <h1 class="recipe_header"> Welcome {{user.username}}!</h1>
+          <h2> View or Edit your recipes below: </h2>
                 {% for recipe in recipes %}
                   {% if forloop.first %} <div class="row"> {% endif %}
-                    <div class="card" style="width: 18rem; margin: 5px;">
+                    <div class="card" style="width: 18rem; ">
                       <a href="/recipe/{{recipe.id}}/"></a>
                         <img class="card-img-top" src="{{ recipe.picture }}" alt=" {{ recipe.title }}" style=" height:100%; width: 100%; object-fit: cover;">
                       <h4 class="card-title" style ="padding-top: 5px;">{{ recipe.title }}</h4>
-                    <div class="d-flex justify-content-between align-items-center" style="padding-left:32%; padding-bottom: 5%;">
-                    <div class="btn-group">
+ 
+                    <div class="button">
                       <a href="/recipe/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">VIEW</a>
                       <a href="/recipe/edit/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">EDIT</a>
                     </div>
                   </div>
-                </div>
      
                 {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
                 {% if forloop.last %}</div>{% endif %}

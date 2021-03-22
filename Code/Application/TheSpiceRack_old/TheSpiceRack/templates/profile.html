@@ -60,27 +60,31 @@
     </div>
 </nav>
         
-        <div class="recipes" style="margin-left: 20%">
-          <h1>Welcome {{user.username}}! View or edit your recipes:</h1>
-                {% for recipe in recipes %}
-                  {% if forloop.first %} <div class="row"> {% endif %}
-                    <div class="card" style="width: 18rem; margin: 5px;">
-                      <a href="/recipe/{{recipe.id}}/"></a>
-                        <img class="card-img-top" src="{{ recipe.picture }}" alt=" {{ recipe.title }}">
-                      <h4 class="card-title" style ="padding-top: 5px;">
-                      <!-- <a href="/recipe/{{recipe.id}}"> -->{{ recipe.title }}</a></h4>
-                    <div class="d-flex justify-content-between align-items-center" style="padding-left:30%; padding-bottom: 5%;">
-                    <div class="btn-group">
-                      <a href="/recipe/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">View</a>
-                      <a href="/recipe/edit/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">Edit</a>
+  <div class="recipes">
+    <h2 class="profile_title">Welcome {{user.username}}! View or edit your recipes:</h2>
+        {% for recipe in recipes %}
+            {% if forloop.first %} <div class="row"> {% endif %}
+              <div class="card" style="width: 18rem; margin: 5px;">
+                <a href="/recipe/{{recipe.id}}/"></a>
+                <div class="card-img">
+                <img class="card-img-top" src="{{ recipe.picture }}" alt=" {{ recipe.title }}"></div>
+                <div class="overlay"> </div>
+                
+
+                <h4 class="card-title" >{{ recipe.title }}</a></h4>
+
+                    <!-- view/edit button -->
+
+                    <div class="button">
+                      <a href="/recipe/{{recipe.id}}" class="btn btn-med btn-outline-secondary">VIEW</a>
+                      <a href="/recipe/edit/{{recipe.id}}" class="btn btn-med btn-outline-secondary">EDIT</a>
                     </div>
-                  </div>
-                </div>
+              </div>
      
-                {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
-                {% if forloop.last %}</div>{% endif %}
-              {% endfor %}
-        </div>  
+            {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
+            {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+  </div>  
 
 
 <!-- Add Edit Browse -->

@@ -16,10 +16,15 @@ h2,h3, .card-header, .card-title, .login, .btn-group {
 	font-weight: 800;
 }
 
-h1{
+h1, h3{
 	font-family: 'Playfair Display', 'serif';
 	font-weight: 800;
+	text-align: center !important;
 
+}
+
+.profile_title{
+	text-align: center !important;
 }
 
  .jumbotron-heading {
@@ -27,23 +32,59 @@ h1{
 	font-weight: 800;
 }
 
-.recipe_header {
-	margin-left: 2%;
+.recipe_header,h3 {
+	margin-right: 25%;
 	font-family: 'Playfair Display', 'serif';
 	font-weight: 600 !important;
 }
 
-p, .parse, .btn-group {
+p, .parse, .button {
 	font-family: 'Poppins', 'san-serif';
 	font-weight: 200;
 	font-size: 1em;
 	
 }
 
+.card-img-top { 
+	 width: 100% !important; 
+	 object-fit: cover !important;
+	 opacity: 1;
+	 display: block;
+}
+
+
+.btn {
+	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+	z-index: 1;
+	border-radius: 0 !important;
+}
+
+.button {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+ text-align: center;
+ opacity: 0;
+ transition: opacity .35s ease;
+}
+
+.card:hover .card-img-top {
+    opacity: 0.4;
+  }
+
+.card:hover .button {
+   opacity: 1;
+
+  }
+
 .jumbo-btn {
+	color: #fff;
 	font-family: 'Poppins', 'san-serif';
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 1em;
+	margin:5px;
 	margin-bottom: 10px;
     padding: 5px 10px;
     background:#ccc; 
@@ -51,7 +92,13 @@ p, .parse, .btn-group {
     cursor:pointer;
 	border-radius: 0 !important;
     border-radius: 5px; 
+    box-shadow: 1px 2px 3px rgba(0,0,0, .5);
+	z-index: 1;
 }
+.jumbo-btn:hover{
+	color:#000;
+}
+
 
 h4 {
 	display: flex;
@@ -59,16 +106,16 @@ h4 {
 }
 
 .card {
-	padding: 10px 10px 0px 10px;
+/*	padding: 5px 5px 0px 5px;*/
 	position: relative;
 	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
 	z-index: 1;
 	border-radius: 0 !important;
+	margin: 5px;
 }
 
 .card-title a, h3 a {
 	color: rgba(0,0,0) !important;
-	
 }
 
 .card-title a:hover, h3 a:hover {
@@ -96,11 +143,7 @@ background-color: rgba(255,255,255) !important;
 	padding: 4rem 0rem 8rem 0rem;
 }
 
-.card-img-top {
-	 height:255px; 
-	 width: 100% !important; 
-	 object-fit: cover !important;
-}
+
 
 #profile{
 	margin-left: 20px;

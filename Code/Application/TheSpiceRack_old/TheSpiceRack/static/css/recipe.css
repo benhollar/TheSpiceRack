@@ -6,8 +6,8 @@ body {
 }
 .container1 {
 	background-color: #FFFFFF;
-  margin: 30px 150px 20px 150px;
-  padding:50px 20px 30px 20px;
+  margin: 30px 150px 30px 150px;
+  padding:50px 50px 50px 50px;
   position: relative;
   box-shadow: 0 0 5px rgba(75, 75, 75, .07);
   z-index: 1;
@@ -31,8 +31,13 @@ h1, h3 {
 
 ul, ol {
 	font-family: 'Bitter';
+
 }
 
+.divider {
+  border-left: 1px solid black;
+  height: 200px;
+}
 
 
 input[type=submit] {

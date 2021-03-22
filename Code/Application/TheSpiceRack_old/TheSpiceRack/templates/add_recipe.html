@@ -139,13 +139,13 @@
             <h2>Recipe Submission</h2>
     </div>
     <div class="row">
-        <p>Add your favorite recipes here!</p>
+        <p>Add your favorite recipes here! Or <a href="/recipe/upload/">Upload via URL</a></p>
     </div>
 
     <div class="row">
         <form action="/recipe/submit/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label class="main" for="picture">Picture</label>
+            <label class="main" for="picture">Upload Image</label>
             <input type="file" id="picture" name="picture"><br>
             <label class="main" for="title">Title</label><br>
             <input type="text" id="title" name="title"><br>
@@ -170,7 +170,7 @@
                     <option value="Gram">Gram</option>
                     <option value="Kiligram">Kiligram</option>
                 </select><br>
-                <label for="name_0"> Name </label>
+                <label for="name_0"> Ingredient Name</label>
                 <input type="text" id="name_0" name="name_0"><br>
             </div>
             <button class="addIngred" type="button" onclick="createNewIngredient()">Add Ingredient</button><br>
@@ -185,7 +185,7 @@
             </div>
             <button class="addStep" type="button" onclick="createNewStep()">Add Step</button><br>
 
-            <input class="addRecipe" type="submit" value="Add Recipe">
+            <input class="addRecipe" type="submit" value="Add Recipe to Database">
         </form>
     </div>
 </div>
