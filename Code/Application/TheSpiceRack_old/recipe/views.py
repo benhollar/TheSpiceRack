@@ -30,7 +30,7 @@ def view_recipe(request, recipe_id):
     fullsteps = recipe.data.get('steps')
 
     splitsteps = fullsteps.split('/n')
-    splitsteps.remove('')
+    splitsteps = list(filter(len, splitsteps))
 
     zipped_data = zip(ingredients, measurements)
 
@@ -120,14 +120,15 @@ def edit_recipe(request, recipe_id):
         ingredients.append(ingredient)
         query_m = Measurement.objects.all().filter(id=ingredient.data.get('measurement_id'))
         results_m = query_m.values()
-        measurement = MeasurementSerializer(results_m[0], many=False)
-        measurements.append(measurement.data.get('type'))
+        if results_m.count() > 0:
+            measurement = MeasurementSerializer(results_m[0], many=False)
+            measurements.append(measurement.data.get('type'))
 
     zipped = zip(ingredients, measurements)
 
     fullsteps = recipe_data.get('steps')
     splitsteps = fullsteps.split('/n')
-    splitsteps.remove('')
+    splitsteps = list(filter(len, splitsteps))
 
     context = {'recipe': recipe_data, 'zipped': zipped, 'steps': splitsteps, 'filename' : filename}
     #Upload results[0] into html values
@@ -154,12 +155,12 @@ def save_recipe(request, recipe_id):
         query_r = Recipe.objects.all().filter(id=recipe_id)
         results_r = query_r.values()
         recipe_preedit = RecipeSerializer(results_r[0], many=False)
-        recipe_pre = Recipe(picture=recipe_preedit.data.get('picture'), id=recipe_preedit.data.get('id'), user_id=recipe_preedit.data.get('user_id'), title=recipe_preedit.data.get('title'), servings=recipe_preedit.data.get('servings'), steps=recipe_preedit.data.get('steps'))
+        recipe_pre = Recipe(picture=recipe_preedit.data.get('picture'), id=recipe_preedit.data.get('id'), title=recipe_preedit.data.get('title'), servings=recipe_preedit.data.get('servings'), steps=recipe_preedit.data.get('steps'))
 
         if picture == '':
             picture = recipe_preedit.data.get('picture')
 
-        recipe = Recipe(picture=picture, username= request.user.username, id=recipe_id, user_id=0, title=title, servings=servings, steps=all_steps)
+        recipe = Recipe(picture=picture, username= request.user.username, id=recipe_id, title=title, servings=servings, steps=all_steps)
         recipe.save()
 
         query_i = Ingredient.objects.all().filter(recipe_used=recipe_pre)
@@ -182,16 +183,55 @@ def upload_recipe(request):
     return render(request, 'upload_recipe.html')
 
 def parse_recipe(request):
+    from .recipe_extraction import classifiers, extractors, extract_recipe
+    import re
+
     #URL should be the only input
-    request.GET.get('url')
+    url = request.GET.get('url')
 
+    # TODO: Dynamic paths
+    extractor = extractors.load(r'/Users/benhollar/Documents/College/Senior Design/TheSpiceRack/Code/Content Recognition/trained_models/extraction/bagging-classifier-f1-83.gz')
+    classifier = classifiers.load(r'/Users/benhollar/Documents/College/Senior Design/TheSpiceRack/Code/Content Recognition/trained_models/classification/20210302185833_aws_v1/model_out')
+    parsed_recipe = extract_recipe(url, extractor, classifier)
 
-    #TODO: The Machine Learning things
+    # Construct the Recipe object
+    recipe_id = Recipe.objects.latest('id').id + 1 if Recipe.objects.all().count() > 0 else 1
+    recipe = Recipe.objects.create(id=recipe_id,
+                                   title=parsed_recipe.title,
+                                   servings=1,
+                                   steps='/n'.join(parsed_recipe.instructions))
+    recipe.save()
 
-    #TODO: Put machine learning output into this context boy
+    ingredients = []
+    # TODO: This only supports 3/12 units
+    regex = r"(?P<amount>\d+(\/\d+)?)*(?:\s*)(?P<unit>\b[oz|c|tsp]+\b)*(?:\.)?"
+    for ingredient_str in parsed_recipe.ingredients:
+        id = Ingredient.objects.latest('id').id + 1 if Ingredient.objects.all().count() > 0 else 1
 
+        match_dict = re.match(regex, ingredient_str)
+        amount = match_dict['amount'] if match_dict['amount'] is not None else '1'
+        unit = match_dict['unit'] if match_dict['unit'] is not None else 'Tablespoon'
+        name = ingredient_str.replace(str(amount), '').replace(unit, '').replace('.', '').strip()
 
+        if '/' in amount:
+            numbers = [float(x) for x in amount.split('/')]
+            amount = str(numbers[0] / numbers[1])
 
-    context = {'recipe': recipe_data, 'ingredients': ingredients, 'steps': splitsteps}
+        if unit == 'oz':
+            unit = Measurement.objects.filter(type='Ounces').values()[0].get('id')
+        elif unit == 'c':
+            unit = Measurement.objects.filter(type='Cup').values()[0].get('id')
+        elif unit == 'tsp':
+            unit = Measurement.objects.filter(type='Teaspoon').values()[0].get('id')
+        else:
+            unit = Measurement.objects.all()[0].id
+        
+        ingredient = Ingredient.objects.create(id=id,
+                                               name=name,
+                                               amount=amount,
+                                               measurement_id=unit,
+                                               recipe_used_id=recipe.id)
+        ingredient.save()
+        ingredients.append(IngredientSerializer(ingredient, many=False))
 
-    return render(request, 'edit_recipe.html', context)
+    return edit_recipe(request, recipe.id)
