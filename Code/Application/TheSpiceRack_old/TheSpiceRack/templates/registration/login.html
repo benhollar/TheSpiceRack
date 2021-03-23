@@ -20,7 +20,7 @@
     <title>Login</title>
 
     <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,21 +55,27 @@
 
 
 <section class="login">
-<div class="row">
+
 <div class="container">	
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Login"> 
-                <a class="fp" href="{% url 'password_change' %}">Forget Password?</a>
+        <input type="submit" value="Login"> <br>
+        <a class="fp" href="{% url 'password_change' %}">Forget Password?</a><br>
         <a class="reg" href="{% url 'register' %}">New Member? Register Now</a>
     </form>
 </div>
-</div>
+
 </section>
 
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>  
 
   <script src="{% static 'jquery/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-</body>
 </html>

@@ -66,7 +66,7 @@
 	    //Create label for Name
 	    var newNameLabel = document.createElement("label");
         newNameLabel.for = "name_"+num;
-        newNameLabel.innerHTML = " Name ";
+        newNameLabel.innerHTML = " Ingredient Name ";
         document.getElementById('ingredient_input').appendChild(newNameLabel);
 
 	    //Create input for Name
@@ -100,8 +100,8 @@
    <!-- end js --> 
 
 <!-- nav -->
-<nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light ">
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -135,15 +135,11 @@
 
 <body>
 <div class="container1">
-    <div class="row">
-            <h2>Recipe Submission</h2>
-    </div>
-    <div class="row">
-        <p>Add your favorite recipes here! Or <a href="/recipe/upload/">Upload via URL</a></p>
-    </div>
+    <h2>Recipe Submission</h2>
+    <p>Add your favorite recipes here! Or <a href="/recipe/upload/">Upload via URL</a></p>
 
     <div class="row">
-        <form action="/recipe/submit/" method="post" enctype="multipart/form-data">
+        <form class="addform" action="/recipe/submit/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label class="main" for="picture">Upload Image</label>
             <input type="file" id="picture" name="picture"><br>
@@ -155,7 +151,7 @@
             <div id="ingredient_input">
                 <label for="amount_0"> Amount </label>
                 <input type="number" id="amount_0" name="amount_0">
-                <label for="measurements_0"> Measurement </label>
+                <label for="measurements_0"> Measurement </label></br>
                 <select class="measure" name="measurements_0" id="measurements_0">
                     <option value="Tablespoon">Tablespoon</option>
                     <option value="Teaspoon">Teaspoon</option>
@@ -170,10 +166,10 @@
                     <option value="Gram">Gram</option>
                     <option value="Kiligram">Kiligram</option>
                 </select><br>
-                <label for="name_0"> Ingredient Name</label>
+                <label for="name_0">Ingredient Name</label><br>
                 <input type="text" id="name_0" name="name_0"><br>
-            </div>
-            <button class="addIngred" type="button" onclick="createNewIngredient()">Add Ingredient</button><br>
+            </div><br>
+            <button class="addIngred" type="button" onclick="createNewIngredient()">ADD INGREDIENT</button><br>
             <label class="main" for="step_1">Preparation</label><br>
             <div id="steps">
                 <label>Step 1</label>
@@ -183,12 +179,19 @@
                 <label>Step 3</label>
                 <input type="text" id="step_3" name="step_3" ><br>
             </div>
-            <button class="addStep" type="button" onclick="createNewStep()">Add Step</button><br>
-
-            <input class="addRecipe" type="submit" value="Add Recipe to Database">
+            <button class="addStep" type="button" onclick="createNewStep()">ADD STEP</button><br>
+            <input class="addRecipe" type="submit" value="ADD RECIPE TO DATABASE">
         </form>
     </div>
 </div>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </body>  
 
   <!-- Bootstrap core JavaScript -->

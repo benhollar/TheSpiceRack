@@ -30,7 +30,7 @@
 
         <!-- nav -->
 <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,30 +60,31 @@
     </div>
 </nav>
         
-  <div class="recipes">
+  <div class="container">
     <h2 class="profile_title">Welcome {{user.username}}! View or edit your recipes:</h2>
+    <div class="recipes">
         {% for recipe in recipes %}
             {% if forloop.first %} <div class="row"> {% endif %}
               <div class="card" style="width: 18rem; margin: 5px;">
                 <a href="/recipe/{{recipe.id}}/"></a>
                 <div class="card-img">
                 <img class="card-img-top" src="{{ recipe.picture }}" alt=" {{ recipe.title }}"></div>
-                <div class="overlay"> </div>
                 
 
-                <h4 class="card-title" >{{ recipe.title }}</a></h4>
+                <h4 class="card-title" style ="padding-top: 5px;">{{ recipe.title }}</a></h4>
 
                     <!-- view/edit button -->
 
                     <div class="button">
-                      <a href="/recipe/{{recipe.id}}" class="btn btn-med btn-outline-secondary">VIEW</a>
-                      <a href="/recipe/edit/{{recipe.id}}" class="btn btn-med btn-outline-secondary">EDIT</a>
+                      <a href="/recipe/{{recipe.id}}" class="btn">VIEW</a>
+                      <a href="/recipe/edit/{{recipe.id}}" class="btn">EDIT</a>
                     </div>
               </div>
      
             {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
             {% if forloop.last %}</div>{% endif %}
         {% endfor %}
+    </div>
   </div>  
 
 
@@ -136,13 +137,20 @@
 </div>
 
 
-
 {% endif %}
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>  
 
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'jquery/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-</body>
 </html>

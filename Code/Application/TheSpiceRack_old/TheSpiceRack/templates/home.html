@@ -29,8 +29,8 @@
 {% if user.is_authenticated %}
 
 
-<nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light ">
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -79,39 +79,42 @@
     <div class="col-lg-12">
     <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading")">Welcome {{user.username}}!</h1>
+          <h1 class="jumbotron-heading">What's cookin', good lookin'.</h1>
            <p>Get started by adding your favorite recipes!</p>
             <a href="/recipe/add" class="jumbo-btn my-2">ADD A RECIPE</a>
             <a id="" href="/recipe/upload" class="jumbo-btn my-2">UPLOAD VIA URL</a>
         </div>
       </section>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <section class="recipes" style="margin-left: 20%">
+    <div class="container">
+        <section class="recipes">
           <h1 class="recipe_header"> Welcome {{user.username}}!</h1>
-          <h2> View or Edit your recipes below: </h2>
+          <p class="recipe_header2">View or Edit your recipes below: </p>
                 {% for recipe in recipes %}
                   {% if forloop.first %} <div class="row"> {% endif %}
+                  <div class="cards">
                     <div class="card" style="width: 18rem; ">
                       <a href="/recipe/{{recipe.id}}/"></a>
                         <img class="card-img-top" src="{{ recipe.picture }}" alt=" {{ recipe.title }}" style=" height:100%; width: 100%; object-fit: cover;">
                       <h4 class="card-title" style ="padding-top: 5px;">{{ recipe.title }}</h4>
  
                     <div class="button">
-                      <a href="/recipe/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">VIEW</a>
-                      <a href="/recipe/edit/{{recipe.id}}" class="btn btn-sm btn-outline-secondary">EDIT</a>
+                      <a href="/recipe/{{recipe.id}}" class="btn">VIEW</a>
+                      <a href="/recipe/edit/{{recipe.id}}" class="btn">EDIT</a>
                     </div>
                   </div>
+                </div>
      
                 {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
                 {% if forloop.last %}</div>{% endif %}
               {% endfor %}
         </section>
       </div>
-  </div>  
+</div>
+
+<!-- <div class="row">
+    
+  </div>  --> 
 
 
 {% else %}
@@ -125,7 +128,7 @@
     <div class="collapse navbar-collapse" id="myNavbarToggler13">
         <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
-                <a class="nav-link" href="/recipe/add/">LOGIN/SIGNUP</a>
+                <a class="nav-link" href="{% url 'login' %}">LOGIN/SIGNUP</a>
             </li>
         </ul>
     </div>
@@ -143,18 +146,15 @@
         </div>
       </section>
     </div>
-</div>
-
-<div class="row">
     <div class="col-lg-6">
       <div class="card">
         <h2 class="text-center">What is The Spice Rack?</h2>
         <p class="text-center">Finding, collecting, and cooking recipes can be a daunting task. There are numerous hurdles for people to effectively manage their recipes. The Spice Rack aims to make the following effortless for users:</p>
-  <ol class="parse">
-    <li>Parsing a variety of sources of recipes (websites, handwritten recipes) into a common, easy-to-read format.</li>
-    <li>Storing user recipes, including automatically imported recipes from the previously mentioned parser.</li>
-    <li>Presenting an effective user-interface for navigating stored recipes.</li>
-  </ol>
+        <ol class="parse">
+          <li>Parsing a variety of sources of recipes (websites, handwritten recipes) into a common, easy-to-read format.</li>
+          <li>Storing user recipes, including automatically imported recipes from the previously mentioned parser.</li>
+          <li>Presenting an effective user-interface for navigating stored recipes.</li>
+        </ol>
     </div>
   </div>
 
@@ -165,12 +165,22 @@
 
 
 
+
+
 {% endif %}
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>  
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'jquery/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-
-</body>
 </html>
 

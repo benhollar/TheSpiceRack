@@ -11,13 +11,9 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;500&display=swap" rel="stylesheet">
-  
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;500&display=swap" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 
     <title>Edit Recipe</title>
@@ -106,7 +102,7 @@
 
 <!-- nav -->
 <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="navbar-brand" href="/users/"><img id="imgsize" src="{% static 'img/logo.png' %}"></div>
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -137,25 +133,26 @@
 </nav>
 <!-- end nav -->
 <body>
-    <div class="container1">
+    <div class="container2">
+    
+    <h2>Edit Recipe</h2>
+
         <div class="row">
-            <h2>Edit Recipe</h2>
-        </div>
-        <div class="row">
-            <form action="/recipe/save/{{recipe.id}}/" method="post" enctype="multipart/form-data">
+            <form class="editform" action="/recipe/save/{{recipe.id}}/" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+                <label class="main" for="picture">Upload Image</label>
                 <input type="file" id="picture" name="picture" value="{{ filename }}"><br>
                 <label class="main" for="title">Title</label><br>
                 <input type="text" id="title" name="title" value="{{recipe.title}}"><br>
                 <label class="main" for="servings">Number of Servings</label><br>
                 <input type="number" id="servings" name="servings" value="{{recipe.servings}}"><br>
                 <label for="ingredient_input">Ingredients</label><br>
-                <div id="ingredient_input">
+
                     {% for ingredient, measurement in zipped %}
-                        <label for="amount_{{ forloop.counter }}"> Amount </label>
+                        <label class="ingredients" for="amount_{{ forloop.counter }}"> Amount </label>
                         <input type="number" id="amount_{{ forloop.counter }}" name="amount_{{ forloop.counter }}" value="{{ ingredient.amount.value }}" step="any"><br>
                         <label class="measure" for="measurements_{{ forloop.counter }}"> Measurement </label>
-                        <select name="measurements_{{ forloop.counter }}" id="measurements_{{ forloop.counter }}">
+                        <select class="measurements_" name="measurements_{{ forloop.counter }}" id="measurements_{{ forloop.counter }}">
                             <option value="Tablespoon">Tablespoon</option>
                             <option value="Teaspoon">Teaspoon</option>
                             <option value="Ounces">Ounces</option>
@@ -172,13 +169,11 @@
                         <script type="text/JavaScript">
                             selectElement('measurements_{{ forloop.counter }}', '{{measurement}}');
                         </script>
-
-                        <label for="name_{{ forloop.counter }}"> Name </label>
+                        <label class="name_" for="name_{{ forloop.counter }}"> Ingredient Name </label>
                         <input type="text" id="name_{{ forloop.counter }}" name="name_{{ forloop.counter }}" value="{{ ingredient.name.value }}"><br>
-
                     {% endfor %}
-                </div>
-                <button class="addIngred" type="button" onclick="createNewIngredient()">Add Ingredient</button><br>
+
+                <button class="addIngred" type="button" onclick="createNewIngredient()">ADD INGREDIENT</button><br>
                 <label class="main" for="steps">Recipe Steps</label><br>
                 <div id="steps">
                     {% for step in steps %}
@@ -187,10 +182,22 @@
                     {% endfor %}
                 </div>
                 <button class="addStep" type="button" onclick="createNewStep()">Add Step</button><br>
-                <input class="addRecipe" type="submit" value="Edit Recipe">
+                <input class="addRecipe" type="submit" value="EDIT RECIPE">
             </form>
         </div>
     </div>
-</body>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>  
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
 </html>

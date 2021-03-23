@@ -8,11 +8,11 @@
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    margin-bottom:-10px;
 }
 
 
 .navbar {
-    margin-bottom: -10px;
     margin-top: -10px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(75, 75, 75, .07);
@@ -23,6 +23,7 @@
 
 .dropdown-item {
     font-size: .8em;
+    margin-bottom: 5px;
 }
 .navbar .navbar-nav .nav-link:hover{
     color: #808080;
@@ -35,15 +36,19 @@
     font-family: 'Poppins', 'san-serif';
     font-weight: 200;
   }
+
 }
 .navbar .navbar-nav {
     margin-top: .5em;
 }
 
 #imgsize {
-    height:3em;
+    height:3.5em;
     position: relative;
     z-index:1;
+    margin-bottom: -20px;
+
+
 
 }
 

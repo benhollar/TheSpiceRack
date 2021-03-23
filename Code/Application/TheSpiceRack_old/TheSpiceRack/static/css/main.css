@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 
-/*html {
-  background-color: rgba(250, 247, 242) !important;
-  height: 100% !important;
-}*/
-
 h2 {
 	font-family: 'Playfair Display';
 	font-style: bold;
-	margin-top: -20px;
+	font-weight: 800 !important;
+	padding-top: 20px;
+	color:#082447;
 }
 
 p {
@@ -17,7 +14,7 @@ p {
 }
 
 .container1{
-	margin: 20px 150px 20px 150px;
+	margin: 80px 150px 20px 150px;
 	padding:20px 80px 20px 80px;
 	background-color: rgba(255,255,255);
 	position: relative;
@@ -25,95 +22,180 @@ p {
   	z-index: 1;
 }
 
-label, .measure {
-	font-family: 'Playfair Display';
-	font-size: 1rem;
+.container2{
+	margin: 30px 150px 20px 150px;
+	padding:20px 80px 20px 80px;
+	background-color: rgba(255,255,255);
+	position: relative;
+  	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+  	z-index: 1;
+}
+
+.container3{
+	margin: 30px 150px 20px 150px;
+	padding:20px 80px 20px 80px;
+	background-color: rgba(255,255,255);
+	position: relative;
+  	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+  	z-index: 1;
+}
+
+  .namerep, .measure, .measurements_ {
+	font-family: 'Playfair Display' !important;
+	font-size: 0.6em;
 	font-weight: 300;
 	margin: 10px 0px 0px 0px;
+	display: block;
+
 
 }
 
-.measure {
+label {
+	font-family: 'Playfair Display' !important;
+	font-size: 1.2em;
+	width:100%;
+	font-weight: 300;
+	margin: 20px 0px 0px 0px;
+
+}
+
+/*.row {
+	display: block;
+	justify-content: center;
+}*/
+
+.uploadlabel{
+	margin-top: 1px;
+	margin-left: 10px;
+
+}
+
+.uploaddesc{
+	margin-top: 1px;
+	margin-left: 10px;
+	padding-bottom: 20px;
+}
+
+
+.measure,.measurements_,.ingredients{
 	font-family: 'Playfair Display';
-	font-size: .8rem;
+	font-size: 1em;
 	font-weight: 300;
 }
 
 
-
-input{
-	width: 100%;
-  	max-width: 90%;
-}
 .main{
 	font-family: 'Playfair Display';
 	font-weight: 400;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
+	margin-bottom: 10px;
 }
 
 form {
 	/*background-color: rgba(255, 255, 255);*/
 	padding: 0px 10px 0px 10px;
+	flex-flow: row wrap;
 }
 
 .addIngred, .addStep {
-	font-family: 'Playfair Display';
+	font-family: 'Poppins';
+	color: #fff;
 	margin-top: 20px;
+	margin-bottom: 30px;
     padding: 5px 10px;
-    background:#ccc; 
+    background-color: rgba(74, 87, 102); 
     border:0 none;
     border-radius: 0 !important;
     box-shadow: 1px 2px 3px rgba(0,0,0, .5);
 
 }
+.addIngred:hover,.addStep:hover {
+	color: rgba(74, 87, 102);
+	background-color: #fff;
+}
 
 
 .addRecipe{
-	font-family: 'Playfair Display';
+	font-family: 'Poppins';
+	color: #fff;
 	margin-top: 20px;
 	margin-bottom: 20px;
     padding: 5px;
 	border-radius: 0 !important;
     box-shadow: 1px 2px 3px rgba(0,0,0, .5);
 
+}
 
+option {
+	font-family: 'Playfair Display';
+	display: block;
 }
 
 input[type=submit] {
 
-	font-family: 'Playfair Display';
-	margin: 30px 0px 20px 0px;
+	font-family: 'Poppins';
+	margin: 20px 0px 20px 0px;
 	padding: 5px;
     border: 0;
 	border-radius: 0 !important;
     box-shadow: 1px 2px 3px rgba(0,0,0, .5);
     display: flex;
  	justify-content: center;
- 	background-color: rgba(148, 148, 148);
+ 	color: #fff;
+ 	background-color:#082447;
+
+
  	/*color: #fff;*/
 }
 
-#recup {
-	padding: 30px;
+input[type=submit]:hover{
+  background-color: #fff;
+  color:#082447;
+}
+
+.uploadRecipe{
+	margin-top: -20px;
 
 }
+
+/*
+#recup {
+	padding: 30px;
+	margin: 50px 0px 0px 50px;
+
+}*/
 
 #step_1{
 	margin-right: 20px;
 }
 
+
+
+input{
+	width: 100%;
+  	max-width: 100% !important;
+  	margin-top: 10px;
+}
+
+html {
+  background-color: rgba(250, 247, 242) !important;
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: rgba(250, 247, 242) !important;
   height: 100% !important;
+  padding-bottom: 10%;
  }
-/*.addRecipe:hover{
-	background-color: rgba(143, 176, 227);
-	border-radius: 15px;
-	width: 150px;
-	height: 60px;
 
-}*/
 
-footer {position: absolute; bottom: 0px; width: 100%;}
+footer {
 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
 

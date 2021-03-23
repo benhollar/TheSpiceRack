@@ -19,53 +19,46 @@
 
     <title>Registration</title>
 
-<!-- nav -->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/users/"><img src="{% static 'img/logo.png' %}"></a>
+    <!-- nav -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="myNavbarToggler13">
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav ml-auto" >
             <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/recipe/add/">Add a Recipe</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">User</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'password_change' %}">Change 
-            Password</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-link" href="/users/">HOME</a>
             </li>
         </ul>
     </div>
-</nav> 
+</nav>
 <!-- end nav -->
 </head>
 
 <body>
-<div class="row">
-<div class="col-lg-4 col-md-4 col-sm- 4 mb 4">	
-    <form method="post">
+<div class="container">
+    <form class="regform" method="post">
+        <h2>Create an Account</h2>
         {% csrf_token %}
         {{form}}
-        <input type="submit" value="Register">
+        <input type="submit" value="REGISTER">
+        <a class="backlogin" href="{% url 'login' %}">BACK TO LOGIN</a>
+        
     </form>
-</div>
-</div>
 
-<div class="row2">
-<div class="side col-lg-4 col-md-4 col-sm- 4 mb 4">	
-    <a href="{% url 'login' %}">Back to Login</a>
+    
 </div>
-</div>
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Spice Rack 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>  
 
-</body>
+
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </html>
