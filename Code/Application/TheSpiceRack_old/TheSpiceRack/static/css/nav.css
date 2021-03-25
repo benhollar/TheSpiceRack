@@ -5,7 +5,7 @@
 .navbar .navbar-nav .nav-link, .dropdown-item{
 
     color: #000000;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-bottom:-10px;
@@ -22,7 +22,7 @@
 
 
 .dropdown-item {
-    font-size: .8em;
+    font-size: .9em;
     margin-bottom: 5px;
 }
 .navbar .navbar-nav .nav-link:hover{
@@ -43,7 +43,7 @@
 }
 
 #imgsize {
-    height:3.5em;
+    height:4em !important;
     position: relative;
     z-index:1;
     margin-bottom: -20px;

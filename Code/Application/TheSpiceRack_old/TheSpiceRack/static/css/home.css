@@ -11,7 +11,12 @@ h2,h3, .card-header, .card-title, .login, .btn-group {
 
 
 .jumbotron {
-	margin-top: 30px;
+	margin-top: 50px;
+	width: 100% !important;
+}
+
+.tron {
+	margin-top: 0px;
 }
 
  .jumbotron-heading {
@@ -31,8 +36,12 @@ h2,h3, .card-header, .card-title, .login, .btn-group {
 }
 
 
+.ex{
+	box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+	z-index: 1;
+	height:260px;
 
-
+}
 p, .parse, .button {
 	font-family: 'Poppins', 'san-serif';
 	font-weight: 200;
@@ -136,6 +145,11 @@ h4 {
 }
 
 .card-title {
+	color: #082447;
+	text-align: center;
+}
+
+.card-text {
 	text-align: center;
 }
 
@@ -163,7 +177,7 @@ background-color: rgba(255,255,255) !important;
 .profile_title{
 	font-weight: 800 !important;
 	text-align: center !important;
-	margin-top: 5%;
+	margin-top: 10%;
 }
 .cards {
 	display: flex;
@@ -172,6 +186,11 @@ background-color: rgba(255,255,255) !important;
 
 .row {
 	margin-bottom: 10%;
+}
+
+.col{
+	margin: 0px 30px 0px 30px;
+	padding: 0px 10px 0px 10px;
 }
 
 
@@ -185,12 +204,13 @@ body {
   height: 100% !important;
  }
 
+
 footer { 
 
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100% !important;
     height: 100px;
 }
 

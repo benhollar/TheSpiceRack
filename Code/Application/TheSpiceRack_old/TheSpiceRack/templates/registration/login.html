@@ -56,11 +56,11 @@
 
 <section class="login">
 
-<div class="container">	
+<div class="container1">	
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Login"> <br>
+        <input type="submit" value="LOGIN"> <br>
         <a class="fp" href="{% url 'password_change' %}">Forget Password?</a><br>
         <a class="reg" href="{% url 'register' %}">New Member? Register Now</a>
     </form>

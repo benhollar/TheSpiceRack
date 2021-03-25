@@ -29,7 +29,7 @@
 {% if user.is_authenticated %}
 
         <!-- nav -->
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light ">
     <div class="navbar-brand"><a href="/users/"><img id="imgsize" src="{% static 'img/logo2.png' %}"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
         aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
         
   <div class="container">
     <h2 class="profile_title">Welcome {{user.username}}! View or edit your recipes:</h2>
-    <div class="recipes">
+      <div class="recipes">
         {% for recipe in recipes %}
             {% if forloop.first %} <div class="row"> {% endif %}
               <div class="card" style="width: 18rem; margin: 5px;">
@@ -84,29 +84,29 @@
             {% if forloop.counter|divisibleby:8 %}</div><div class="row">{% endif %}
             {% if forloop.last %}</div>{% endif %}
         {% endfor %}
-    </div>
+      </div>
   </div>  
 
 
 <!-- Add Edit Browse -->
-    <div class="row">
-      <div class="col-lg-6 mb-2">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col">
         <div class="card h-100" id="profile">
           <h4 class="card-header">
-            <a href="/recipe/add/"> Add a Recipe </a>
+            <a class="card-title" href="/recipe/add/"> Add a Recipe </a>
           </h4>
           <div class="card-body">
-            <p class="card-text">Add new recipes to our database!</p>
+            <p class="card-text">Add new recipes by using our recipe submission form!</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mb-2" >
+      <div class="col" >
         <div class="card h-100" id="profile">
           <h4 class="card-header">
-            <a href="/recipe/upload/"> Upload via URL </a>
+            <a class="card-title" href="/recipe/upload/"> Upload via URL </a>
           </h4>
           <div class="card-body">
-            <p class="card-text">Upload a recipe from an existing website!</p>
+            <p class="card-text">Upload a recipe from an existing website by copy and pasting the URL!</p>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@
 
 <div class="row">
     <div class="col-lg-6">
-      <img class="img-fluid rounded mb-4" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg" alt="">
+      <img class="img-fluid rounded mb-4" src="{% static 'img/example.jpg' %}" alt="">
     </div>
     <div class="col-lg-6">
         <h2>What is The Spice Rack?</h2>
