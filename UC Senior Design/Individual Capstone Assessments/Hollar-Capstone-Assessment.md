@@ -53,7 +53,7 @@ semesters at the same company -- Etegent Technologies Ltd. -- and continued work
 semesters. The company focuses on data science -- the corporate slogan is "Revealing that which is hidden" -- and my
 projects there lend me confidence in my ability to parse and analyze various data sources. Specifically, I've been
 involved heavily in creating algorithms for loading numerous geospatial data sources, creating user-interface designs to
-aid intepreting said data, and supporting the development of a relational database to manage users and their workspaces.
+aid interpreting said data, and supporting the development of a relational database to manage users and their workspaces.
 Aside from those technical skills, my work experience has also enabled me to efficiently perform quality assurance,
 including the development of unit tests. My work experience also improved various soft-skills, including project
 management and remote collaboration.
@@ -75,7 +75,7 @@ read. Our goal here is to solidly improve the user experience of collecting and 
 
 Our preliminary approach will be to investigate methods of parsing websites for recipe information, ideally using
 machine learning to comb through raw HTML for relevant information. We also must investigate OCR techniques, considering
-implemeting our own character recognition learning model using public datasets.
+implementing our own character recognition learning model using public datasets.
 
 Key, measurable accomplishments of this project should include:
 
