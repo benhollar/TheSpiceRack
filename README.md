@@ -74,28 +74,39 @@ To see examples of our pages, head over to our [UI Design](https://github.com/be
 
 #### Logging In
 
+![Login](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Login.png)
+
 After entering the website URL, you will be prompted to our Login page. 
 
 To create an account, navigate to **Create Account** at the bottom. From there, you can enter the data necessary to register the account.
 
 Once your account is ready, you may login and begin your cooking journey!
 
+![Home](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Home.png)
+
+
+You will be prompted to our homepage, which will display any existing recipes.
 
 
 #### Adding a Recipe
 
-![Login](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Login.png)
+![Add](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Add.png)
 
 To add a recipe, head over to our navigation bar and select **Add Recipe**. A dropdown will appear, and you can choose to add a recipe manually, or via URL. From there, you will be able to enter all of your recipe needs. To add an extra ingredient or step, you can hit the **Add Ingredient/Step** button. Our ingredients portion also allows for you to change the measurements as well! Once you are done, click submit and your recipe will be saved and displayed for all to see.
 
+![URL](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/URL.png)
 To add a recipe via URL, you can paste your favorite recipe from any recipe site, and hit **Upload Recipe**!
-
-
 
 
 #### Editing a Recipe
 
-To edit a recipe, you can hover over an existing recipe and click **Edit**. You should be able to select a recipe that you want to edit, and modify any changes. Hit submit and you're good to go!
+![Edit](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Edit.png)
+
+To edit a recipe, you can hover over an existing recipe and click **Edit**. You should be able to select a recipe that you want to edit, and modify any changes. 
+
+![Recipe](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Recipe.png)
+
+Or you can view a recipe, and hit **Edit Recipe**. Hit submit and you're good to go!
 
 ### Content Recognition
 
