@@ -10,27 +10,25 @@ Faculty Advisor:
 
 1. Dr. Chia Han (han@ucmail.uc.edu)
 
-## Basic Idea
+## Final Abstract
 
-Finding, collecting, and cooking recipes can be a daunting task. There are numerous hurdles for people to effectively
-manage their recipes. In this project, we'd like to create an effective way of:
+Finding and collecting recipes can be a daunting task, and many online recipe sources distract users with unnecessary
+blogs or advertisements. The Spice Rack aims to reduce that problem by providing a web application where users can store
+their recipes without distractions and import recipes from online sources using a machine-learning driven content
+extraction process.
 
-1. Parsing a variety of sources of recipes (websites, handwritten recipes) into a common, easy-to-read format.
-2. Storing user recipes, including automatically imported recipes from the previously mentioned parser.
-3. Presenting an effective user-interface for navigating stored recipes
+## Detailed Description
 
-## Potential Technologies
+The Spice Rack is a web-application dedicated to allowing users to import and collect their recipes in a central,
+persistent, and accessible hub. Key to enabling this was the implementation of a machine-learning (ML) backed algorithm
+that can, given a URL, automatically collect recipe information and populate our web forms without any user
+intervention. As such, the project was divided into 3 distinct pieces, worked on independently by one team member each,
+then combined to produce our final result. Those three pieces were:
 
-For parsing recipes, we want to avoid instances in which we must have custom behavior for each input source. A general
-solution that works broadly is a key goal of this project. As such, we envision the parser will entail using some
-combination of the following:
+1. (Ben Hollar) Machine-learning recipe parsing, leveraging `dragnet` for content extraction and `BERT` for text
+   classification.
+2. (Erin Graska) Backend web development, leveraging the `Django` web-development framework for Python
+3. (Stephanie Tam) Frontend web development and design, leveraging `Django`, HTML, and CSS to create an effective UI
 
-1. Machine learning
-2. Optical character recognition (for handwriting)
-3. Simple HTML parsing
-
-The rest of the intended project (storage and display of user recipes) will likely involve:
-
-1. A relational database
-2. REST API to retrieve DB info
-3. Web frontend
+When combined, these pieces form a complete web application, backed by a database which serves data via a REST API, and
+can ingest data using ML models -- fulfilling our original project goals.
