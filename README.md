@@ -77,7 +77,7 @@ After entering the website URL, you will be prompted to our Login page.
 
 To create an account, navigate to **Create Account** at the bottom. From there, you can enter the data necessary to register the account.
 
-![Login](./UI_Design/login.png)
+![Login](./images/login.png)
 
 Once your account is ready, you may login and begin your cooking journey!
 
