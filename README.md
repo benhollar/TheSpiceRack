@@ -70,6 +70,7 @@ Detailed instructions for getting set up with each section of the repository are
 	* Navigate to 127.0.0.1:8000/
 	* Log in with user created in step 5
 
+To see examples of our pages, head over to our [UI Design](https://github.com/benhollar/TheSpiceRack/tree/master/UC%20Senior%20Design/UI%20Design) folder!
 
 #### Logging In
 
@@ -77,18 +78,24 @@ After entering the website URL, you will be prompted to our Login page.
 
 To create an account, navigate to **Create Account** at the bottom. From there, you can enter the data necessary to register the account.
 
-![Login](./UC_Senior_Design/images/login.png)
-
 Once your account is ready, you may login and begin your cooking journey!
+
+
 
 #### Adding a Recipe
 
-To add a recipe, head over to our navigation bar and select **Add Recipe**. From there, you will be able to enter all of your recipe needs. To add an extra ingredient or step, you can hit the **Add Ingredient/Step** button. Our ingredients portion also allows for you to change the measurements as well! Once you are done, click submit and your recipe will be saved and displayed for all to see.
+![Login](https://github.com/benhollar/TheSpiceRack/blob/master/UC%20Senior%20Design/UI%20Design/Login.png)
+
+To add a recipe, head over to our navigation bar and select **Add Recipe**. A dropdown will appear, and you can choose to add a recipe manually, or via URL. From there, you will be able to enter all of your recipe needs. To add an extra ingredient or step, you can hit the **Add Ingredient/Step** button. Our ingredients portion also allows for you to change the measurements as well! Once you are done, click submit and your recipe will be saved and displayed for all to see.
+
+To add a recipe via URL, you can paste your favorite recipe from any recipe site, and hit **Upload Recipe**!
+
+
 
 
 #### Editing a Recipe
 
-To add a recipe, head over to our navigation bar and select **User > Edit Recipe**. You should be able to select a recipe that you want to edit, and modify any changes. You can also edit a recipe by hovering over a recipe and clicking **Edit**. Hit submit and you're good to go!
+To edit a recipe, you can hover over an existing recipe and click **Edit**. You should be able to select a recipe that you want to edit, and modify any changes. Hit submit and you're good to go!
 
 ### Content Recognition
 
