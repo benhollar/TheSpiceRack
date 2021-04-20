@@ -73,11 +73,11 @@ Detailed instructions for getting set up with each section of the repository are
 
 #### Logging In
 
-After entering the website URL, you will be prompted to our home page. There you will find various featured recipes.
+After entering the website URL, you will be prompted to our Login page. 
 
-To create an account, navigate to **User (on the top right) > Create Account**. From there, you can enter the data necessary to register the account.
+To create an account, navigate to **Create Account** at the bottom. From there, you can enter the data necessary to register the account.
 
-_To-Do: screenshots of login/register_
+![Login](./UI_Design/login.png)
 
 Once your account is ready, you may login and begin your cooking journey!
 
@@ -85,9 +85,10 @@ Once your account is ready, you may login and begin your cooking journey!
 
 To add a recipe, head over to our navigation bar and select **Add Recipe**. From there, you will be able to enter all of your recipe needs. To add an extra ingredient or step, you can hit the **Add Ingredient/Step** button. Our ingredients portion also allows for you to change the measurements as well! Once you are done, click submit and your recipe will be saved and displayed for all to see.
 
+
 #### Editing a Recipe
 
-To add a recipe, head over to our navigation bar and select **User > Edit Recipe**. You should be able to select a recipe that you want to edit, and modify any changes. Hit submit and you're good to go!
+To add a recipe, head over to our navigation bar and select **User > Edit Recipe**. You should be able to select a recipe that you want to edit, and modify any changes. You can also edit a recipe by hovering over a recipe and clicking **Edit**. Hit submit and you're good to go!
 
 ### Content Recognition
 
